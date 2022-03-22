@@ -6,11 +6,12 @@ const GlobalReset = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     line-height: 1;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 24px;
+    font-family: 'Gamja Flower', cursive;
   }
-  body {
+  body {}
+  #root {
     height: 100vh;
-    padding: 80px;
   }
   ul, li {
     list-style: none;
@@ -29,10 +30,6 @@ const GlobalReset = createGlobalStyle`
   }
   a {
     text-decoration: none;
-  }
-  
-  svg {
-    font-size: 20px;
   }
 `;
 
