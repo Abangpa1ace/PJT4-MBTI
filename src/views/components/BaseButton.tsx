@@ -4,11 +4,12 @@ import styled, { css } from 'styled-components';
 
 type Props = {
   children: React.ReactNode;
+  theme: string;
 }
 
-const BaseButton: React.FC<Props> = ({ children }) => {
+const BaseButton: React.FC<Props> = ({ children, theme }) => {
   return (
-    <ScButton>{children || '확인'}</ScButton>
+    <ScButton theme={theme}>{children || '확인'}</ScButton>
   )
 }
 
@@ -17,6 +18,10 @@ const ScButton = styled.button`
   height: 40px;
   padding: 0 50px;
   border-radius: 20px;
+  transition: opacity .3s ease;
+  &:hover {
+    opacity: 0.7;
+  }
 
   ${({ theme }) => {
     switch(theme) {

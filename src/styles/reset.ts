@@ -5,7 +5,7 @@ const GlobalReset = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1;
+    line-height: 1.6;
     font-size: 24px;
     font-family: 'Gamja Flower', cursive;
   }
@@ -27,6 +27,10 @@ const GlobalReset = createGlobalStyle`
     border: 0;
     outline: 0;
     cursor: pointer;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
   }
   a {
     text-decoration: none;

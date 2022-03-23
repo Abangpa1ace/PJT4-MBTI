@@ -5,7 +5,12 @@ export const container = css`
   height: 100%;
   margin: 0 auto;
   padding: 50px;
+  overflow: hidden;
 
+  * > {
+    width: 100%;
+  }
+  
   @media (max-width: 580px) {
     width: 100%;
     padding: 50px 15px;
@@ -27,6 +32,11 @@ export const flexBetween = css`
 export const flexAlign = css`
   display: flex;
   align-items: center;
+`;
+
+export const flexColumn = css`
+  ${flexCenter};
+  flex-direction: column;
 `;
 
 export const ellipsis = css`
