@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { container, flexColumn, test } from '@/styles/mixin';
+import { container, s } from '@/styles/mixin';
 import BaseButton from '@/views/components/BaseButton';
 
 const MainPage = () => {
@@ -12,36 +12,17 @@ const MainPage = () => {
           <img src="/src/asset/img/intro.jpeg" alt="intro-difference-img" />
         </div>
         <BaseButton color="purple">테스트 하러 가기</BaseButton>
-        <Test>
-          <div></div>
-          <div></div>
-          <div></div>
-        </Test>
       </section>
     </ScMainPage>
   )
 }
 
-const Test = styled.div`
-  margin-top: 60px;
-  ${test()}
-  
-  > * {
-    width: 40px;
-    height: 40px;
-    border: 1px solid blue;
-    background: red;
-  }
-`;
-
 const ScMainPage = styled.div`
   > section {
     ${container};
-    ${flexColumn};
+    ${s(`flex-column;`)}
 
-    h2 {
-      font-size: 36px;
-    }
+    h2 { ${s(`fs(36);`)} }
 
     .image-holder {
       height: 310px;

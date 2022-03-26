@@ -1,4 +1,6 @@
 import { css } from 'styled-components';
+import customStyles from './asset';
+import { strSplit } from '@/utils';
 
 export const container = css`
   max-width: 580px;
@@ -6,10 +8,6 @@ export const container = css`
   margin: 0 auto;
   padding: 50px;
   overflow: hidden;
-
-  * > {
-    width: 100%;
-  }
   
   @media (max-width: 580px) {
     width: 100%;
@@ -17,39 +15,12 @@ export const container = css`
   }
 `;
 
-export const test = (d = 'flex', jc = 'center', ai = 'center', fd = 'row') => {
-  return css`
-    display: ${d};
-    justify-content: ${jc};
-    align-items: ${ai};
-    flex-direction: ${fd};
-  `;
+export const s = (styleContext: string) => {
+  const styles = strSplit(styleContext, ';').reduce((acc, style) => {
+    let [k,v] = style.split(/[()]/)
+    const vs = v ? strSplit(v, ',').map(v => Number(v) ? `${v}px` : v) : '';
+    return acc + customStyles[k](...vs)
+  }, '')
+
+  return css`${styles}`
 }
-
-export const flexCenter = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const flexBetween = css`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const flexAlign = css`
-  display: flex;
-  align-items: center;
-`;
-
-export const flexColumn = css`
-  ${flexCenter};
-  flex-direction: column;
-`;
-
-export const ellipsis = css`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`;

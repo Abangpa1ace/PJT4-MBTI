@@ -1,24 +1,22 @@
-import { flexCenter } from '@/styles/mixin';
+import { s } from '@/styles/mixin';
 import React from 'react'
 import styled, { css } from 'styled-components';
 
 type Props = {
   children: React.ReactNode;
+  className?: string;
   color: string;
 }
 
-const BaseButton: React.FC<Props> = ({ children, color }) => {
+const BaseButton: React.FC<Props> = ({ children, className, color }) => {
   return (
-    <ScButton color={color}>{children || '확인'}</ScButton>
+    <ScButton className={className} color={color}>{children || '확인'}</ScButton>
   )
 }
 
 const ScButton = styled.button`
-  ${flexCenter};
-  height: 40px;
-  padding: 0 50px;
-  border-radius: 20px;
-  transition: opacity .3s ease;
+  ${s(`h(40); p(0,50); br(20); trans(.3s, opacity); flex-center;`)}
+
   &:hover {
     opacity: 0.7;
   }
@@ -33,7 +31,7 @@ const ScButton = styled.button`
         return css`background: #d4d4d4; color: #191919;`
       case 'purple':
       default:
-        return css`background: ${theme.purple[1]}; color: white;`
+        return s(`bgc(${theme.purple[1]}); c(white)`)
     }
   }}
 `;
