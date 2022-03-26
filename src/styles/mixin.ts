@@ -17,6 +17,15 @@ export const container = css`
   }
 `;
 
+export const test = (d = 'flex', jc = 'center', ai = 'center', fd = 'row') => {
+  return css`
+    display: ${d};
+    justify-content: ${jc};
+    align-items: ${ai};
+    flex-direction: ${fd};
+  `;
+}
+
 export const flexCenter = css`
   display: flex;
   justify-content: center;

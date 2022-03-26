@@ -4,12 +4,12 @@ import styled, { css } from 'styled-components';
 
 type Props = {
   children: React.ReactNode;
-  theme: string;
+  color: string;
 }
 
-const BaseButton: React.FC<Props> = ({ children, theme }) => {
+const BaseButton: React.FC<Props> = ({ children, color }) => {
   return (
-    <ScButton theme={theme}>{children || '확인'}</ScButton>
+    <ScButton color={color}>{children || '확인'}</ScButton>
   )
 }
 
@@ -23,14 +23,17 @@ const ScButton = styled.button`
     opacity: 0.7;
   }
 
-  ${({ theme }) => {
-    switch(theme) {
+  ${({ theme, color }) => {
+    switch(color) {
       case 'green':
-        return css`background: #50e3c2; color: white;`
+        return css`background: ${theme}; color: white;`
       case 'blue':
         return css`background: #00b8ff; color: white;`
-      default:
+      case 'gray':
         return css`background: #d4d4d4; color: #191919;`
+      case 'purple':
+      default:
+        return css`background: ${theme.purple[1]}; color: white;`
     }
   }}
 `;
