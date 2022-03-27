@@ -1,6 +1,6 @@
-import { s } from '@/styles/mixin';
 import React from 'react'
 import styled, { css } from 'styled-components';
+import s from '@/styles/mixin';
 
 type Props = {
   children: React.ReactNode;
@@ -14,11 +14,11 @@ const BaseButton: React.FC<Props> = ({ children, className, color }) => {
   )
 }
 
-const ScButton = styled.button`
-  ${s(`h(40); p(0,50); br(20); trans(.3s, opacity); flex-center;`)}
+const ScButton = styled.button` 
+  ${s(`h(40); p(0,50); br(20); trans(.3s, opacity); flex-center; trans;`)}
 
   &:hover {
-    opacity: 0.7;
+    ${s(`o(.7)`)}
   }
 
   ${({ theme, color }) => {

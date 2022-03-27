@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import { container, s } from '@/styles/mixin';
+import s, { container } from '@/styles/mixin';
 import BaseButton from '@/views/components/BaseButton';
+import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   return (
@@ -11,29 +12,25 @@ const MainPage = () => {
         <div className="image-holder">
           <img src="/src/asset/img/intro.jpeg" alt="intro-difference-img" />
         </div>
-        <BaseButton color="purple">테스트 하러 가기</BaseButton>
+        <Link to='/test'>
+          <BaseButton color="purple">테스트 하러 가기</BaseButton>
+        </Link>
       </section>
     </ScMainPage>
   )
 }
 
 const ScMainPage = styled.div`
-  > section {
+  > section { 
+    ${s(`flex-column;`)};
     ${container};
-    ${s(`flex-column;`)}
 
-    h2 { ${s(`fs(36);`)} }
+    h2 ${s(`fs(36);`)}
 
-    .image-holder {
-      height: 310px;
-      margin: 40px 0 60px;
-      overflow: hidden;
-
-      img {
-        transform: translateY(-60px);
-      }
+    .image-holder { ${s(`h(310); m(40,0,60); crop;`)}
+      img ${s(`t-y(-60px)`)}
     }
   }
-`;
+`
 
 export default MainPage

@@ -15,12 +15,14 @@ export const container = css`
   }
 `;
 
-export const s = (styleContext: string) => {
+const s = (styleContext: string) => {
   const styles = strSplit(styleContext, ';').reduce((acc, style) => {
     let [k,v] = style.split(/[()]/)
-    const vs = v ? strSplit(v, ',').map(v => Number(v) ? `${v}px` : v) : '';
+    const vs = v ? strSplit(v, ',').map(v => Number.isInteger(+v) ? `${v}px` : v) : '';
     return acc + customStyles[k](...vs)
   }, '')
 
-  return css`${styles}`
+  return `{ ${css`${styles}`} }`
 }
+
+export default s;

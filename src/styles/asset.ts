@@ -37,13 +37,13 @@ const customStyles: customStylesType = {
   'min-w': (w = '100%') => `min-width: ${w};`,
   'max-w': (w = '100%') => `max-width: ${w};`,
   'calc-w': (v1: string, v2: string) => `width: calc(${v1} - ${v2})`,
-  h: (h: string): string => `height: ${h};`,
+  h: (h: string) => `height: ${h};`,
   hf: () => `height: 100%;`,
   'min-h': (h = '100%') => `min-height: ${h};`,
   'max-h': (h = '100%') => `max-height: ${h};`,
 
   // padding
-  p: (py: string, px?: string) => `padding: ${py} ${px || ''};`,
+  p: (pt: string, pr='', pb='', pl='') => `padding: ${pt} ${pr} ${pb} ${pl};`,
   pt: (p: string) => `padding-top: ${p};`,
   pb: (p: string) => `padding-bottom: ${p};`,
   pl: (p: string) => `padding-left: ${p};`,
@@ -52,7 +52,7 @@ const customStyles: customStylesType = {
   py: (p: string) => `padding-top: ${p}; padding-bottom: ${p};`,
 
   // margin
-  m: (my: string, mx?: string) => `margin: ${my} ${mx || ''};`,
+  m: (mt: string, mr='', mb='', ml='') => `margin: ${mt} ${mr} ${mb} ${ml};`,
   mt: (m: string) => `margin-top: ${m};`,
   mb: (m: string) => `margin-bottom: ${m};`,
   ml: (m: string) => `margin-left: ${m};`,
