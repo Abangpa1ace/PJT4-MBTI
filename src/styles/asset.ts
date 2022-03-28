@@ -20,7 +20,7 @@ const customStyles: customStylesType = {
   cnt: (cnt = '') => `content: ${cnt};`,
 
   // display: flex
-  flex: () => `display: flex`,
+  flex: () => `display: flex;`,
   'inline-flex': () => `display: inline-flex;`,
   'flex-jc': (jc = 'center') => `justify-contents: ${jc};`,
   'flex-ai': (ai = 'center') => `align-items: ${ai};`,

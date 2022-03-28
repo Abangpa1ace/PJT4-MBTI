@@ -11,7 +11,7 @@ export const container = css`
   
   @media (max-width: 580px) {
     width: 100%;
-    padding: 50px 15px;
+    padding: 50px 20px;
   }
 `;
 
