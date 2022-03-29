@@ -1,11 +1,11 @@
-import typeA from "./testA";
-import typeB from "./testB";
+import phaseA from "./testA";
+import phaseB from "./testB";
 
-type Key = 'typeA' | 'typeB'
+type Key = 'phaseA' | 'phaseB'
 
-const testListObject: { [k in string]: TestList} = {
-  typeA,
-  typeB,
+const testListObject: { [k in Key]: TestList} = {
+  phaseA,
+  phaseB,
 }
 
 export default testListObject

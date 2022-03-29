@@ -7,9 +7,9 @@ import s, { container } from '@/styles/mixin'
 const MidResultPage = () => {
   return (
     <ScMidResultPage>
-      <h2>중간 결과입니다.</h2>
-      <Link to='/test?phase=b'>
-          <BaseButton color="purple">다음 테스트 하러 가기</BaseButton>
+      <h2>최종 결과입니다!!!</h2>
+      <Link to='/'>
+          <BaseButton color="purple">처음으로 돌아가기~</BaseButton>
         </Link>
     </ScMidResultPage>
   )

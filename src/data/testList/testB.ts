@@ -1,130 +1,130 @@
 const testBList: TestList = [
   {
-    category: 'IE',
-    question: '질문의 예시가 어떻습니까??',
+    category: 'EI',
+    question: 'MBTI 1번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      I: '답변1',
-      E: '답변2',
+      E: 'E',
+      I: 'I',
     }
   },
   {
-    category: 'IE',
-    question: '질문의 예시가 어떻습니까??',
+    category: 'EI',
+    question: 'MBTI 2번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      I: '답변1',
-      E: '답변2',
+      E: 'E',
+      I: 'I',
     }
   },
   {
-    category: 'IE',
-    question: '질문의 예시가 어떻습니까??',
+    category: 'EI',
+    question: 'MBTI 3번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      I: '답변1',
-      E: '답변2',
+      E: 'E',
+      I: 'I',
     }
   },
   {
-    category: 'IE',
-    question: '질문의 예시가 어떻습니까??',
+    category: 'EI',
+    question: 'MBTI 4번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      I: '답변1',
-      E: '답변2',
-    }
-  },
-  {
-    category: 'SN',
-    question: '질문의 예시가 어떻습니까??',
-    options: {
-      S: '답변1',
-      N: '답변2',
+      E: 'E',
+      I: 'I',
     }
   },
   {
     category: 'SN',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 5번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      S: '답변1',
-      N: '답변2',
+      S: 'S',
+      N: 'N',
     }
   },
   {
     category: 'SN',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 6번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      S: '답변1',
-      N: '답변2',
+      S: 'S',
+      N: 'N',
     }
   },
   {
     category: 'SN',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 7번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      S: '답변1',
-      N: '답변2',
+      S: 'S',
+      N: 'N',
+    }
+  },
+  {
+    category: 'SN',
+    question: 'MBTI 8번째 질문입니다. 무엇을 고르시겠습니까?',
+    options: {
+      S: 'S',
+      N: 'N',
     }
   },
   {
     category: 'TF',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 9번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      T: '답변1',
-      F: '답변2',
+      T: 'T',
+      F: 'F',
     }
   },
   {
     category: 'TF',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 10번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      T: '답변1',
-      F: '답변2',
+      T: 'T',
+      F: 'F',
     }
   },
   {
     category: 'TF',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 11번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      T: '답변1',
-      F: '답변2',
+      T: 'T',
+      F: 'F',
     }
   },
   {
     category: 'TF',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 12번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      T: '답변1',
-      F: '답변2',
+      T: 'T',
+      F: 'F',
     }
   },
   {
     category: 'JP',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 13번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      J: '답변1',
-      P: '답변2',
+      J: 'J',
+      P: 'P',
     }
   },
   {
     category: 'JP',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 14번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      J: '답변1',
-      P: '답변2',
+      J: 'J',
+      P: 'P',
     }
   },
   {
     category: 'JP',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 15번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      J: '답변1',
-      P: '답변2',
+      J: 'J',
+      P: 'P',
     }
   },
   {
     category: 'JP',
-    question: '질문의 예시가 어떻습니까??',
+    question: 'MBTI 16번째 질문입니다. 무엇을 고르시겠습니까?',
     options: {
-      J: '답변1',
-      P: '답변2',
+      J: 'J',
+      P: 'P',
     }
   },
 ]

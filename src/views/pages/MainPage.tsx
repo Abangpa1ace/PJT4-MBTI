@@ -12,7 +12,7 @@ const MainPage = () => {
         <div className="image-holder">
           <img src="/src/asset/img/intro.jpeg" alt="intro-difference-img" />
         </div>
-        <Link to='/test?type=a'>
+        <Link to='/test?phase=a'>
           <BaseButton color="purple">테스트 하러 가기</BaseButton>
         </Link>
       </section>

@@ -1,5 +1,5 @@
 type TestOptions = {
-  IE: { I: string, E: string },
+  EI: { E: string, I: string },
   SN: { S: string, N: string },
   TF: { T: string, F: string },
   JP: { J: string, P: string },
@@ -12,3 +12,9 @@ interface TestItem {
 }
 
 type TestList = TestItem[];
+
+interface TestResultItem extends TestItem {
+  result?: string;
+}
+
+type TestResultList = TestResultItem[];
