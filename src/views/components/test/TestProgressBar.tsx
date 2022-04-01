@@ -1,6 +1,7 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import s from '@/styles/mixin';
+import { extendWidth } from '@/styles/keyframes';
 
 type Props = {
   length: number; 
@@ -27,18 +28,11 @@ const ScTestProgressBar = styled.ul<{length: number; themeKey: string;}>`
 
     &.show { 
       ${s('db; o(.9);')};
-      animation: ${({ length }) => extendBar(length)} .3s ease forwards;
+      animation: ${({ length }) => extendWidth(`${100/length}%`)} .3s ease forwards;
     }
   }
 `
 
-const extendBar = (length: number) => keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: calc(100%/${length});
-  }
-`
+
 
 export default TestProgressBar
