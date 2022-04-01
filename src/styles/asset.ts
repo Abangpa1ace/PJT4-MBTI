@@ -16,7 +16,7 @@ const customStyles: customStylesType = {
   db: () => `display: block;`,
   dib: () => `display: inline-block;`,
   di: () => `display: inline;`,
-  dh: () => `display: hide;`,
+  dn: () => `display: none;`,
   cnt: (cnt = '') => `content: ${cnt};`,
 
   // display: flex
@@ -31,7 +31,7 @@ const customStyles: customStylesType = {
   'flex-column': () => `display: flex; justify-contents: center; align-items: center; flex-direction: column;`,
 
   // width, height
-  wh: (w: string, h: string) => `width: ${w}; height: ${h};`,
+  wh: (w: string, h?: string) => `width: ${w}; height: ${h || w};`,
   w: (w = '100%') => `width: ${w};`,
   wf: () => `width: 100%;`,
   'min-w': (w = '100%') => `min-width: ${w};`,

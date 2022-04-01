@@ -3,22 +3,22 @@ import customStyles from './asset';
 import { strSplit } from '@/utils';
 
 export const container = css`
-  max-width: 580px;
+  max-width: 550px;
   height: 100%;
   margin: 0 auto;
   padding: 50px;
   overflow: hidden;
   
-  @media (max-width: 580px) {
+  @media (max-width: 550px) {
     width: 100%;
-    padding: 50px 20px;
+    padding: 30px 20px;
   }
 `;
 
 const s = (styleContext: string) => {
   const styles = strSplit(styleContext, ';').reduce((acc, style) => {
     let [k,v] = style.split(/[()]/)
-    const vs = v ? strSplit(v, ',').map(v => Number.isInteger(+v) ? `${v}px` : v) : '';
+    const vs = v ? strSplit(v, ',').map(v => +v !== 0 && Number.isInteger(+v) ? `${v}px` : v) : '';
     return acc + customStyles[k](...vs)
   }, '')
 

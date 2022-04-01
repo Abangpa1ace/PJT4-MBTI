@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import s, { container } from '@/styles/mixin';
-import BaseButton from '@/views/components/BaseButton';
+import BaseButton from '@/views/components/common/BaseButton';
 import { Link } from 'react-router-dom';
 
 const MainPage = () => {
@@ -27,8 +27,8 @@ const ScMainPage = styled.div`
 
     h2 ${s(`fs(36);`)}
 
-    .image-holder { ${s(`h(310); m(40,0,60); crop;`)}
-      img ${s(`t-y(-60px)`)}
+    .image-holder { ${s(`w(100%); m(40,0,60); crop;`)}
+      img ${s(`mb(-12%); t-y(-12%);`)}
     }
   }
 `

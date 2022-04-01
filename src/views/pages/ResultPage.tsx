@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-import BaseButton from '@/views/components/BaseButton';
+import BaseButton from '@/views/components/common/BaseButton';
 import s, { container } from '@/styles/mixin'
 
 const MidResultPage = () => {
