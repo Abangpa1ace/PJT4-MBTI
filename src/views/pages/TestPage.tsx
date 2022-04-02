@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react'
 import qs from 'qs';
 import styled from 'styled-components'
-import testData from '@/data/testList';
+import testData from '@/db/testList';
 import { arrShuffle } from '@/utils';
 import s, { container } from '@/styles/mixin';
 import useReactRouter from '@/hooks/useReactRouter';
 import TestItemForm, { ScTestItemForm } from '@/views/components/test/TestItemForm';
 import TestProgressBar from '@/views/components/test/TestProgressBar';
+import { useSetRecoilState } from 'recoil';
+import { resultA } from '@/recoil/main';
 
 const TestPage: React.FC = () => {
   const { search, navigate } = useReactRouter()
@@ -18,9 +20,14 @@ const TestPage: React.FC = () => {
   const [index, setIndex] = useState<number>(0)
   const [test, setTest] = useState<TestItem>(testList.current[index])
 
+  const setResultA = useSetRecoilState(resultA);
+
   const clickOption = (type: string) => {
     testList.current[index].result = type
-    if (index === testList.current.length - 1) navigate(isPhaseA ? '/mid-result' : '/result')
+    if (index === testList.current.length - 1) {
+      setResultA(testList.current)
+      navigate(isPhaseA ? '/mid-result' : '/result')
+    }
     else {
       setIndex(index+1)
       setTest(testList.current[index])

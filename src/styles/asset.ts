@@ -66,10 +66,10 @@ const customStyles: customStylesType = {
   ab: (b = '0') => `bottom: ${b};`,
   al: (l = '0') => `left: ${l};`,
   ar: (r = '0') => `right: ${r};`,
-  alt: (l='0', t='0') => `left: ${l}; top: ${t}`,
-  alb: (l='0', b='0') => `left: ${l}; bottom: ${b}`,
-  art: (r='0', t='0') => `right: ${r}; top: ${t}`,
-  arb: (r='0', b='0') => `right: ${r}; bottom: ${b}`,
+  alt: (l='0', t='0') => `left: ${l}; top: ${t};`,
+  alb: (l='0', b='0') => `left: ${l}; bottom: ${b};`,
+  art: (r='0', t='0') => `right: ${r}; top: ${t};`,
+  arb: (r='0', b='0') => `right: ${r}; bottom: ${b};`,
   ac: () => `left: 50%; top: 50%;`,
 
   // visibility

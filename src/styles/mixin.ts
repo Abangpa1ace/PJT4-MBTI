@@ -17,8 +17,12 @@ export const container = css`
 
 const s = (styleContext: string) => {
   const styles = strSplit(styleContext, ';').reduce((acc, style) => {
-    let [k,v] = style.split(/[()]/)
-    const vs = v ? strSplit(v, ',').map(v => +v !== 0 && Number.isInteger(+v) ? `${v}px` : v) : '';
+    const s = style.indexOf('(')
+    const e = style.lastIndexOf(')')
+    let k = s === -1 ? style : style.slice(0,s)
+    let v = s === -1 ? null : style.slice(s+1,e)
+    // let [k,v] = style.split(/[()]/)
+    const vs = v?.includes('rgb') ? [v] : !!v ? strSplit(v, ',').map(v => +v !== 0 && Number.isInteger(+v) ? `${v}px` : v) : '';
     return acc + customStyles[k](...vs)
   }, '')
 
