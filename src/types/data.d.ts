@@ -5,6 +5,8 @@ type TestOptions = {
   JP: { J: string, P: string },
 }
 
+type Results = 'I' | 'E' | 'S' | 'N' | 'T' | 'F' | 'J' | 'P'
+
 interface TestItem {
   category: keyof TestOptions;
   question: string;
@@ -14,7 +16,7 @@ interface TestItem {
 type TestList = TestItem[];
 
 interface TestResultItem extends TestItem {
-  result?: string;
+  result: Results
 }
 
 type TestResultList = TestResultItem[];

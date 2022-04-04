@@ -15,8 +15,8 @@ const MidResultPage: React.FC = () => {
   const { navigate } = useReactRouter()
 
   useEffect(() => {
+    if (!resultCode) navigate('/mid-result')
     const loader = setTimeout(() => {
-      if (!resultCode) navigate('/mid-result')
       setResult(resultCode);
       setLoading(false);
     }, 3000)

@@ -1,9 +1,11 @@
-import { setMBTI } from '@/utils';
+import { setMBTI } from '@/utils/data';
+import { atomEffect, getStorage } from '@/utils/storage';
 import { atom, selector } from 'recoil';
 
 export const resultA = atom<TestResultList>({
   key: 'resultA',
   default: [],
+  effects: [atomEffect('resultA', false)],
 })
 
 export const resultCodeA = selector<string>({
@@ -17,6 +19,7 @@ export const resultCodeA = selector<string>({
 export const resultB = atom<TestResultList>({
   key: 'resultB',
   default: [],
+  effects: [atomEffect('resultB', false)],
 })
 
 export const resultCodeB = selector<string>({

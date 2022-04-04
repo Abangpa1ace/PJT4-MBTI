@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import customStyles from './asset';
-import { strSplit } from '@/utils';
+import { strSplit } from '@/utils/common';
 
 export const container = css`
   max-width: 550px;

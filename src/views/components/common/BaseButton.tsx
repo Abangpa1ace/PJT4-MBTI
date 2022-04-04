@@ -4,18 +4,19 @@ import s from '@/styles/mixin';
 
 type Props = {
   children: React.ReactNode;
+  color?: string;
   className?: string;
-  color: string;
+  onClick?: () => void;
 }
 
-const BaseButton: React.FC<Props> = ({ children, className, color }) => {
+const BaseButton: React.FC<Props> = ({ children, className, color, onClick }) => {
   return (
-    <ScButton className={className} color={color}>{children || '확인'}</ScButton>
+    <ScBaseButton className={className} color={color} onClick={onClick}>{children || '확인'}</ScBaseButton>
   )
 }
 
-const ScButton = styled.button` 
-  ${s(`h(40); p(0,50); br(20); trans(.3s, opacity); flex-center; trans;`)}
+export const ScBaseButton = styled.button` 
+  ${s(`min-w(350); h(48); br(24); trans(.3s, opacity); flex-center; trans;`)}
 
   &:hover {
     ${s(`o(.7)`)}

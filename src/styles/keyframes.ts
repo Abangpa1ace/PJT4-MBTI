@@ -1,17 +1,17 @@
 import { keyframes } from 'styled-components'
 
-export const extendWidth = (length: number) => keyframes`
+export const extendWidth = (length?: number | string) => keyframes`
   from {
     width: 0;
   }
 }
   to {
-    width: ${length}
+    width: ${length || 'initial'}
 `
 
 export const slideLeft = keyframes`
   from {
-    transform: translateX(100%) scale(.5);
+    transform: translateX(50%) scale(.6);
     opacity: 0;
   }
   to {
