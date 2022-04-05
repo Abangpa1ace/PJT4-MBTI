@@ -8,6 +8,7 @@ import Loader from '@/views/components/common/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { resultCodeA } from '@/recoil/main';
 import { resultA } from '@/recoil/main';
+import CharSprite from '../components/result/CharSprite';
 
 const MidResultPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -37,6 +38,8 @@ const MidResultPage: React.FC = () => {
         <>
           <h2>중간 결과입니다.</h2>
           <p>{result}</p>
+          <img src="/src/asset/img/mbti_char_a.jpeg" />
+          <CharSprite phase={'b'} code={'INFP'} />
           <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
           <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
         </>

@@ -28,7 +28,7 @@ const ScTestOption = styled.button<{themeKey: string;}>`
   ${({ theme, themeKey }) => s(`wh(80%,70); bgc(${theme[themeKey][0]}); br(24); o(0); t-x(100%); trans;`)}
   &:hover ${s(`o(0.7);`)}
   &:nth-of-type(2) { animation-delay: .2s; }
-  animation: ${slideLeft} .4s ease forwards;
+  animation: ${slideLeft} .3s ease forwards;
 `
 
 export default TestItemForm
