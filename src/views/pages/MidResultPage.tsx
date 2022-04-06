@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import BaseButton, { ScBaseButton } from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
@@ -38,8 +37,7 @@ const MidResultPage: React.FC = () => {
         <>
           <h2>중간 결과입니다.</h2>
           <p>{result}</p>
-          <img src="/src/asset/img/mbti_char_a.jpeg" />
-          <CharSprite phase={'b'} code={'INFP'} />
+          <CharSprite phase="a" code={'ISFJ'} />
           <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
           <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
         </>

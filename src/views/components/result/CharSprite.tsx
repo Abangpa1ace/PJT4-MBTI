@@ -1,28 +1,29 @@
 import s from '@/styles/mixin'
 import React from 'react'
 import styled from 'styled-components'
+import { charOffset } from '@/constants';
 
 type Props = {
-  code: string;
+  code: Codes;
   phase: 'a' | 'b'
 }
 
 type ScProps = {
+  x: number;
+  y: number;
   phase: 'a' | 'b'
 }
 
 const CharSprite: React.FC<Props> = ({ code, phase }) => {
   return (
-    <ScCharSprite code={code} phase={phase}>
-
-    </ScCharSprite>
+    <ScCharSprite {...charOffset[code]} phase={phase} />
   )
 }
 
 const ScCharSprite = styled.div<ScProps>`
   ${s('wh(140,150); -a(red);')}
   ${({ phase }) => `background-image: url('/src/asset/img/mbti_char_${phase}.jpeg')`};
-  background-position: -350px -350px;
+  ${({ x, y }) => `background-position: ${x}px ${y}px`};
   background-repeat: no-repeat;
 `
 

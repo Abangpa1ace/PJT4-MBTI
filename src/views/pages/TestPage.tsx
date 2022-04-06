@@ -29,7 +29,7 @@ const TestPage: React.FC = () => {
     if (index === testList.current.length - 1) {
       if (isPhaseA) {
         setResultA(testList.current)
-        // setStorage('resultA', testList.current, false)
+        setStorage('resultA', testList.current, false)
         navigate('/mid-result')
       }
       else {
