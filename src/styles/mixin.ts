@@ -3,6 +3,11 @@ import customStyles from './asset';
 import { strSplit } from '@/utils/common';
 
 export const container = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
   max-width: 550px;
   height: 100%;
   margin: 0 auto;
@@ -10,6 +15,7 @@ export const container = css`
   overflow: hidden;
   
   @media (max-width: 550px) {
+    gap: 20px;
     width: 100%;
     padding: 30px 20px;
   }

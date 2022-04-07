@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import qs from 'qs';
 import styled from 'styled-components'
 import testData from '@/db/testList';
 import { arrShuffle } from '@/utils/common';
@@ -13,8 +12,7 @@ import { setStorage } from '@/utils/storage';
 
 const TestPage: React.FC = () => {
   const { search, navigate } = useReactRouter()
-  const { phase } = qs.parse(search, { ignoreQueryPrefix: true });
-  const isPhaseA = phase === 'a'
+  const isPhaseA = search.phase === 'a'
   const themeKey = isPhaseA ? 'green' : 'yellow'
   
   const testList = useRef<TestResultList>(arrShuffle([...testData[isPhaseA ? 'phaseA' : 'phaseB']]))
@@ -29,12 +27,12 @@ const TestPage: React.FC = () => {
     if (index === testList.current.length - 1) {
       if (isPhaseA) {
         setResultA(testList.current)
-        setStorage('resultA', testList.current, false)
+        // setStorage('resultA', testList.current, false)
         navigate('/mid-result')
       }
       else {
         setResultB(testList.current)
-        setStorage('resultB', testList.current, false)
+        // setStorage('resultB', testList.current, false)
         navigate('/result')
       }
     }
@@ -57,10 +55,10 @@ const TestPage: React.FC = () => {
 
 const ScTestPage = styled.div`
   ${container};
-  ${ScTestItemForm} ${s('mt(20)')}
+  /* ${ScTestItemForm} ${s('mt(20)')} */
 `;
 
-const TestNum = styled.p<{themeKey: string;}>`${s('fs(24); bold;')}
+const TestNum = styled.p<{themeKey: string;}>`${s('wf; fs(24); bold;')}
   > span.num {
     ${({ theme, themeKey }) => s(`c(${theme[themeKey][1]});`)}
   }

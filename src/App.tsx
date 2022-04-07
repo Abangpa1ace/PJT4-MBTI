@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalReset from './styles/reset';
 import theme from './styles/theme';
-import MainPage from './views/pages/MainPage';
+import HomePage from './views/pages/HomePage';
 import Routes from '@/Routes';
 
 const App: React.FC = () => {

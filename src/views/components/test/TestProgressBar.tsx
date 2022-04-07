@@ -20,7 +20,7 @@ const TestProgressBar: React.FC<Props> = ({ length, index, themeKey }) => {
 }
 
 const ScTestProgressBar = styled.ul<{length: number; themeKey: string;}>`
-  ${s('flex; h(6); bgc(#e0e0e0); mt(40); br(3); crop;')}
+  ${s('flex; wh(100%,6); bgc(#e0e0e0); br(3); crop;')}
 
   > li {
     ${({ theme, length, themeKey }) => s(`dn; w(${100/length}%); h(100%); bgc(${theme[themeKey][1]}); o(0);`)}

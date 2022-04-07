@@ -10,11 +10,11 @@ import { resultA } from '@/recoil/main';
 import CharSprite from '../components/result/CharSprite';
 
 const MidResultPage: React.FC = () => {
+  const { navigate } = useReactRouter()
   const [loading, setLoading] = useState<boolean>(true);
   const [result, setResult] = useState<string>('')
   const resetResultA = useResetRecoilState(resultA)
   const resultCode = useRecoilValue<string>(resultCodeA)
-  const { navigate } = useReactRouter()
 
   useEffect(() => {
     if (!resultCode) navigate('/test?phase=a')
@@ -37,7 +37,7 @@ const MidResultPage: React.FC = () => {
         <>
           <h2>중간 결과입니다.</h2>
           <p>{result}</p>
-          <CharSprite phase="a" code={'ISFJ'} />
+          <CharSprite phase="a" code={resultCode} />
           <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
           <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
         </>
