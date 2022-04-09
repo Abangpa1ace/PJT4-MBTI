@@ -12,8 +12,8 @@ const HomePage = () => {
           <span className="green">파릇파릇</span> 했던 그 시절의 나, <br />
           대체 <span className="yellow">무슨 일</span>이 일어난거지?!
         </h3>
-        <h2>지금 우리 MBTI는</h2>
-        <Link to='/test?phase=a'>
+        <h2>지금 우리 MBTI는?</h2>
+        <Link to='/test?phase=a' className='button'>
           <BaseButton color="purple">테스트 하러 가기</BaseButton>
         </Link>
         <div className="image-holder">
@@ -32,7 +32,9 @@ const ScHomePage = styled.div`
       span.green { ${({ theme }) => `color: ${theme.green[1]}`} }
       span.yellow { ${({ theme }) => `color: ${theme.yellow[1]}`} }
     }
-    h2 ${s(` fs(40);`)}
+    h2 ${s(`fs(40);`)}
+
+    .button ${s('m(40,0);')}
 
     .image-holder { ${s(`w(100%); crop;`)}
       img ${s(`mb(-12%); t-y(-12%);`)}

@@ -7,8 +7,7 @@ import useReactRouter from '@/hooks/useReactRouter';
 import TestItemForm, { ScTestItemForm } from '@/views/components/test/TestItemForm';
 import TestProgressBar from '@/views/components/test/TestProgressBar';
 import { useSetRecoilState } from 'recoil';
-import { resultA, resultB } from '@/recoil/main';
-import { setStorage } from '@/utils/storage';
+import { atomResultA, atomResultB } from '@/recoil/main';
 
 const TestPage: React.FC = () => {
   const { search, navigate } = useReactRouter()
@@ -19,26 +18,24 @@ const TestPage: React.FC = () => {
   const [index, setIndex] = useState<number>(0)
   const [test, setTest] = useState<TestItem>(testList.current[index])
 
-  const setResultA = useSetRecoilState(resultA);
-  const setResultB = useSetRecoilState(resultB);
+  const setResultA = useSetRecoilState(atomResultA);
+  const setResultB = useSetRecoilState(atomResultB);
 
   const clickOption = (type: Results) => {
     testList.current[index].result = type
     if (index === testList.current.length - 1) {
       if (isPhaseA) {
         setResultA(testList.current)
-        // setStorage('resultA', testList.current, false)
         navigate('/mid-result')
       }
       else {
         setResultB(testList.current)
-        // setStorage('resultB', testList.current, false)
         navigate('/result')
       }
     }
     else {
+      setTest(testList.current[index+1])
       setIndex(index+1)
-      setTest(testList.current[index])
     }
   }
 

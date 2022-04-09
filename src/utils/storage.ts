@@ -8,7 +8,6 @@ export const setStorage = (key: string, value: storageValue, isLocal = true): vo
 }
 
 export const getStorage = (key: string, isLocal = true): void => {
-  console.log('get', key)
   let savedValue = (isLocal ? localStorage : sessionStorage).getItem(key)
   if (!savedValue) throw 'None Value'
 
@@ -18,12 +17,4 @@ export const getStorage = (key: string, isLocal = true): void => {
 export const removeStorage = (key: string | null, isLocal = true): void => {
   const storage = isLocal ? localStorage : sessionStorage
   !key ? storage.clear() : storage.removeItem(key)
-}
-
-export const atomEffect = (key: string, isLocal = true) => ({ setSelf, onSet }) => {
-  setSelf(getStorage(key, isLocal));
-  onSet((newValue: storageValue) => {
-    console.log('sto', key, newValue, isLocal)
-    setStorage(key, newValue, isLocal)
-  })
 }
