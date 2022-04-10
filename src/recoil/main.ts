@@ -2,14 +2,18 @@ import { setMBTI } from '@/utils/data';
 import { atom, selector } from 'recoil';
 import { recoilPersist } from 'recoil-persist'; 
 
-const { persistAtom } = recoilPersist({
-  storage: sessionStorage,
-})
+const storageAtom = (isPersist = true) => {
+  const { persistAtom } = recoilPersist({
+    storage: isPersist ? localStorage : sessionStorage,
+  })
+
+  return persistAtom
+}
 
 export const atomResultA = atom<TestResultList>({
   key: 'resultA',
   default: [],
-  effects_UNSTABLE: [persistAtom],
+  effects_UNSTABLE: [storageAtom(false)],
 })
 
 export const resultCodeA = selector<string>({
@@ -23,7 +27,7 @@ export const resultCodeA = selector<string>({
 export const atomResultB = atom<TestResultList>({
   key: 'resultB',
   default: [],
-  effects_UNSTABLE: [persistAtom],
+  effects_UNSTABLE: [storageAtom(false)],
 })
 
 export const resultCodeB = selector<string>({
