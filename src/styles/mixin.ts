@@ -9,10 +9,11 @@ export const container = css`
   align-items: center;
   gap: 40px;
   max-width: 550px;
-  height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 50px;
+  padding: 80px 30px;
   overflow: hidden;
+  border: 1px solid red;
   
   @media (max-width: 550px) {
     gap: 20px;

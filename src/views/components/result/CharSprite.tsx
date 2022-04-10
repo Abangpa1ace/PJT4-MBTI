@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { charOffset } from '@/constants';
 
 type Props = {
-  code: Codes;
+  code: TestCodes;
   phase: 'a' | 'b'
 }
 

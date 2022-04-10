@@ -9,50 +9,56 @@ import TestProgressBar from '@/views/components/test/TestProgressBar';
 import { useSetRecoilState } from 'recoil';
 import { atomResultA, atomResultB } from '@/recoil/main';
 
+const listA = arrShuffle(testData.phaseA);
+const listB = arrShuffle(testData.phaseB);
+
 const TestPage: React.FC = () => {
   const { search, navigate } = useReactRouter()
   const isPhaseA = search.phase === 'a'
   const themeKey = isPhaseA ? 'green' : 'yellow'
   
-  const testList = useRef<TestResultList>(arrShuffle([...testData[isPhaseA ? 'phaseA' : 'phaseB']]))
+  const testList = isPhaseA ? listA : listB
   const [index, setIndex] = useState<number>(0)
-  const [test, setTest] = useState<TestItem>(testList.current[index])
+  const [test, setTest] = useState<TestItem>(testList[index])
 
   const setResultA = useSetRecoilState(atomResultA);
   const setResultB = useSetRecoilState(atomResultB);
 
-  const clickOption = (type: Results) => {
-    testList.current[index].result = type
-    if (index === testList.current.length - 1) {
+  const clickOption = (type: TestAnswer) => {
+    testList[index].result = type
+    if (index === testList.length - 1) {
       if (isPhaseA) {
-        setResultA(testList.current)
-        navigate('/mid-result')
+        setResultA(testList)
+        navigate('/result/mid')
       }
       else {
-        setResultB(testList.current)
-        navigate('/result')
+        setResultB(testList)
+        navigate('/result/final')
       }
     }
     else {
-      setTest(testList.current[index+1])
+      setTest(testList[index+1])
       setIndex(index+1)
     }
   }
 
   return (
     <ScTestPage>
-      <TestNum themeKey={themeKey}>
-        Question <span className='num'>{String(index+1).padStart(2,'0')}</span> .
-      </TestNum>
-      <TestItemForm test={test} themeKey={themeKey} clickOption={clickOption} />
-      <TestProgressBar length={testList.current.length} index={index} themeKey={themeKey} />
+      <section>
+        <TestNum themeKey={themeKey}>
+          Question <span className='num'>{String(index+1).padStart(2,'0')}</span> .
+        </TestNum>
+        <TestItemForm test={test} themeKey={themeKey} clickOption={clickOption} />
+        <TestProgressBar length={testList.length} index={index} themeKey={themeKey} />
+      </section>
     </ScTestPage>
   )
 }
 
 const ScTestPage = styled.div`
-  ${container};
-  /* ${ScTestItemForm} ${s('mt(20)')} */
+  section {
+    ${container};
+  }
 `;
 
 const TestNum = styled.p<{themeKey: string;}>`${s('wf; fs(24); bold;')}

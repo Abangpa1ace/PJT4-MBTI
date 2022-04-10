@@ -16,7 +16,7 @@ export const atomResultA = atom<TestResultList>({
   effects_UNSTABLE: [storageAtom(false)],
 })
 
-export const resultCodeA = selector<string>({
+export const resultCodeA = selector<TestCodes>({
   key: 'resultCodeA',
   get: ({get}) => {
     const list = get(atomResultA)
@@ -30,7 +30,7 @@ export const atomResultB = atom<TestResultList>({
   effects_UNSTABLE: [storageAtom(false)],
 })
 
-export const resultCodeB = selector<string>({
+export const resultCodeB = selector<TestCodes>({
   key: 'resultCodeB',
   get: ({get}) => {
     const list = get(atomResultB)

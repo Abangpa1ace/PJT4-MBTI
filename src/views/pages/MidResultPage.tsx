@@ -3,23 +3,21 @@ import styled from 'styled-components'
 import BaseButton, { ScBaseButton } from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import s, { container } from '@/styles/mixin'
-import Loader from '@/views/components/common/Loader';
+import Loader, { ScLoader } from '@/views/components/common/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { resultCodeA } from '@/recoil/main';
-import { resultA } from '@/recoil/main';
+import { atomResultA } from '@/recoil/main';
 import CharSprite from '../components/result/CharSprite';
 
 const MidResultPage: React.FC = () => {
   const { navigate } = useReactRouter()
   const [loading, setLoading] = useState<boolean>(true);
-  const [result, setResult] = useState<string>('')
-  const resetResultA = useResetRecoilState(resultA)
-  const resultCode = useRecoilValue<string>(resultCodeA)
+  const resetResultA = useResetRecoilState(atomResultA)
+  const resultCode = useRecoilValue<TestCodes>(resultCodeA)
 
   useEffect(() => {
     if (!resultCode) navigate('/test?phase=a')
     const loader = setTimeout(() => {
-      setResult(resultCode);
       setLoading(false);
     }, 2000)
     return () => clearTimeout(loader)
@@ -32,26 +30,30 @@ const MidResultPage: React.FC = () => {
 
   return (
     <ScMidResultPage>
-      {
-        loading ? <Loader /> :
-        <>
-          <h2>중간 결과입니다.</h2>
-          <p>{result}</p>
-          <CharSprite phase="a" code={resultCode} />
-          <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
-          <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
-        </>
-      }
+      <section>
+        {
+          loading ? <Loader /> :
+          <>
+            <CharSprite phase="a" code={resultCode} />
+            <h3>학창시절의 나는? <span>{resultCode}!</span></h3>
+            <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
+            <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
+          </>
+        }
+      </section>
     </ScMidResultPage>
   )
 }
 
 const ScMidResultPage = styled.div`
-  ${s(`tac;`)}
-  ${container};
+  > section {
+    ${container};
 
-  ${ScBaseButton} {
-    ${s('mt(20);')}
+    h3 {
+      ${s('fs(28);')}
+      span ${({ theme }) => s(`fs(28); c(${theme.purple[2]})`)}
+    }
+    ${ScLoader} ${s('t-yc;')}
   }
 `
 

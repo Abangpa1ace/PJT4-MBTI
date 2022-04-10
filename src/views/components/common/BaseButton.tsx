@@ -16,7 +16,7 @@ const BaseButton: React.FC<Props> = ({ children, className, color, onClick }) =>
 }
 
 export const ScBaseButton = styled.button` 
-  ${s(`min-w(350); h(48); br(24); trans(.3s, opacity); flex-center; trans;`)}
+  ${s(`min-w(350); h(56); br(28); trans(.3s, opacity); flex-center; trans;`)}
 
   &:hover {
     ${s(`o(.7)`)}

@@ -1,4 +1,4 @@
-export const charOffset: { [k in Codes]: { x: number, y: number } } = {
+export const charOffset: { [k in TestCodes]: { x: number, y: number } } = {
   ENFJ: { x: -35, y: -20 },
   INFP: { x: -190, y: -20 },
   INFJ: { x: -345, y: -20 },

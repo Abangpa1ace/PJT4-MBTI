@@ -4,9 +4,9 @@ export const extendWidth = (length?: number | string) => keyframes`
   from {
     width: 0;
   }
-}
   to {
     width: ${length || 'initial'}
+  }
 `
 
 export const slideLeft = keyframes`
@@ -19,3 +19,21 @@ export const slideLeft = keyframes`
     opacity: 1;
   }
 `
+
+export const showHide = keyframes`
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1
+  }
+  50% {
+    opacity: 1
+  }
+  75% {
+    opacity: 1
+  }
+  100% {
+    opacity: 1
+  }
+`;

@@ -8,14 +8,14 @@ import Loader from '@/views/components/common/Loader';
 import { useRecoilValue } from 'recoil';
 import { resultCodeB } from '@/recoil/main';
 
-const MidResultPage: React.FC = () => {
+const FinalResultPage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [result, setResult] = useState<string>('');
   const resultCode = useRecoilValue<string>(resultCodeB)
   const { navigate } = useReactRouter()
 
   useEffect(() => {
-    if (!resultCode) navigate('/mid-result')
+    if (!resultCode) navigate('/result/mid')
     const loader = setTimeout(() => {
       setResult(resultCode);
       setLoading(false);
@@ -24,7 +24,7 @@ const MidResultPage: React.FC = () => {
   })
 
   return (
-    <ScMidResultPage>
+    <ScFinalResultPage>
       {
         loading ? <Loader /> :
         <>
@@ -34,13 +34,13 @@ const MidResultPage: React.FC = () => {
           </Link>
         </>
       }
-    </ScMidResultPage>
+    </ScFinalResultPage>
   )
 }
 
-const ScMidResultPage = styled.div`
+const ScFinalResultPage = styled.div`
   ${container};
   ${s(`tac;`)}
 `
 
-export default MidResultPage
+export default FinalResultPage

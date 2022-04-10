@@ -5,9 +5,9 @@ type TestOptions = {
   JP: { J: string, P: string },
 }
 
-type Results = 'I' | 'E' | 'S' | 'N' | 'T' | 'F' | 'J' | 'P'
+type TestAnswer = 'I' | 'E' | 'S' | 'N' | 'T' | 'F' | 'J' | 'P'
 
-type Codes = 
+type TestCodes = 
   'INFJ' | 'INFP' | 'INTJ' | 'INTP' |
   'ISFJ' | 'ISFP' | 'ISTJ' | 'ISTP' |
   'ENFJ' | 'ENFP' | 'ENTJ' | 'ENTP' |
@@ -22,7 +22,7 @@ interface TestItem {
 type TestList = TestItem[];
 
 interface TestResultItem extends TestItem {
-  result: Results
+  result: TestAnswer
 }
 
 type TestResultList = TestResultItem[];

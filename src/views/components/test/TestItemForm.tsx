@@ -6,7 +6,7 @@ import { slideLeft } from '@/styles/keyframes';
 type Props = {
   test: TestItem;
   themeKey: 'green' | 'yellow';
-  clickOption: (type: Results) => void;
+  clickOption: (type: TestAnswer) => void;
 }
 
 const TestItemForm: React.FC<Props> = ({ test, themeKey, clickOption }) => {
