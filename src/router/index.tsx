@@ -1,15 +1,17 @@
 import { useRoutes } from 'react-router-dom';
 import HomePage from '@/views/pages/HomePage';
+import pages from './pages';
 
-function Router() {
+const Routes = () => {
   let routes = useRoutes([
     { 
-      path: '/',
-      element: HomePage,
+      path: "/",
+      element: <HomePage />,
     },
+    ...pages,
   ])
 
   return routes;
 }
 
-export default Router
+export default Routes
