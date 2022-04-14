@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import BaseButton, { ScBaseButton } from '@/views/components/common/BaseButton';
+import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import s, { container } from '@/styles/mixin'
 import Loader, { ScLoader } from '@/views/components/common/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
-import { resultCodeA } from '@/recoil/main';
-import { atomResultA } from '@/recoil/main';
+import { atomResultA, resultCodeA } from '@/recoil/main';
 import CharSprite from '../components/result/CharSprite';
 
 const MidResultPage: React.FC = () => {
@@ -46,6 +45,10 @@ const MidResultPage: React.FC = () => {
 }
 
 const ScMidResultPage = styled.div`
+  ${ScLoader} {
+    > img { transform: scaleX(-1); }
+  }
+
   > section {
     ${container};
 

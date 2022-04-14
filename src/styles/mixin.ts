@@ -8,14 +8,13 @@ export const container = css`
   justify-content: flex-start;
   align-items: center;
   gap: 40px;
-  max-width: 550px;
+  max-width: 520px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 80px 30px;
   overflow: hidden;
-  border: 1px solid red;
   
-  @media (max-width: 550px) {
+  @media (max-width: 520px) {
     gap: 20px;
     width: 100%;
     padding: 30px 20px;

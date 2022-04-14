@@ -5,42 +5,49 @@ import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import s, { container } from '@/styles/mixin'
 import Loader from '@/views/components/common/Loader';
-import { useRecoilValue } from 'recoil';
-import { resultCodeB } from '@/recoil/main';
+import { useRecoilValue, useResetRecoilState } from 'recoil';
+import { atomResultB, resultCodeB } from '@/recoil/main';
+import CharSprite from '../components/result/CharSprite';
 
 const FinalResultPage: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [result, setResult] = useState<string>('');
-  const resultCode = useRecoilValue<string>(resultCodeB)
   const { navigate } = useReactRouter()
+  const [loading, setLoading] = useState<boolean>(true);
+  const resetResultB = useResetRecoilState(atomResultB)
+  const resultCode = useRecoilValue<TestCodes>(resultCodeB)
 
   useEffect(() => {
     if (!resultCode) navigate('/result/mid')
     const loader = setTimeout(() => {
-      setResult(resultCode);
       setLoading(false);
     }, 3000)
     return () => clearTimeout(loader)
   })
 
+  const goBackHome = () => {
+    resetResultB();
+    navigate('/')
+  }
+
   return (
     <ScFinalResultPage>
-      {
-        loading ? <Loader /> :
-        <>
-          <h2>최종 결과입니다!!!</h2>
-          <Link to='/'>
-            <BaseButton color="purple">처음으로 돌아가기~</BaseButton>
-          </Link>
-        </>
-      }
+      <section>
+        {
+          loading ? <Loader /> :
+          <>
+            <CharSprite phase="b" code={resultCode} />
+            <h2>최종 결과입니다!!!</h2>
+            <BaseButton color="purple" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
+          </>
+        }
+      </section>
     </ScFinalResultPage>
   )
 }
 
 const ScFinalResultPage = styled.div`
-  ${container};
-  ${s(`tac;`)}
+  > section {
+    ${container};
+  }
 `
 
 export default FinalResultPage

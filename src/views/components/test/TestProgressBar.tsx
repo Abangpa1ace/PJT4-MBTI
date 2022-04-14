@@ -23,11 +23,11 @@ const ScTestProgressBar = styled.ul<{length: number; themeKey: string;}>`
   ${s('flex; wh(100%,6); bgc(#e0e0e0); br(3); crop;')}
 
   > li {
-    ${({ theme, length, themeKey }) => s(`dn; w(${100/length}%); h(100%); bgc(${theme[themeKey][1]}); o(0);`)}
+    ${({ theme, length, themeKey }) => s(`w(${100/length}%); h(100%); bgc(${theme[themeKey][1]}); o(0); -a(Red))`)}
 
     &.show { 
-      ${s('db; o(.9);')};
-      animation: ${extendWidth()} .3s ease forwards;
+      ${s('o(.9);')};
+      animation: ${extendWidth(`${100/length}%`)} .3s ease forwards;
     }
   }
 `

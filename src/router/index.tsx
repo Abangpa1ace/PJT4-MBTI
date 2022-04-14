@@ -2,7 +2,7 @@ import { useRoutes } from 'react-router-dom';
 import HomePage from '@/views/pages/HomePage';
 import pages from './pages';
 
-const Routes = () => {
+const Router = () => {
   let routes = useRoutes([
     { 
       path: "/",
@@ -14,4 +14,4 @@ const Routes = () => {
   return routes;
 }
 
-export default Routes
+export default Router
