@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled, { css } from 'styled-components';
 import s from '@/styles/mixin';
 
@@ -37,4 +37,4 @@ export const ScBaseButton = styled.button`
   }}
 `;
 
-export default BaseButton
+export default memo(BaseButton)

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import s, { container } from '@/styles/mixin'
-import Loader, { ScLoader } from '@/views/components/common/Loader';
+import Loader, { ScLoader } from '@/views/components/result/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { atomResultA, resultCodeA } from '@/recoil/main';
 import CharSprite from '../components/result/CharSprite';

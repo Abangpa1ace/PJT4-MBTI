@@ -15,7 +15,7 @@ const HomePage = () => {
           </div>
           <h3>
             <span className="green">파릇파릇</span> 했던 그 시절의 나, <br />
-            입사하더니 <span className="yellow">무슨 일</span>이 일어난거지?!
+            입사하더니 대체 <span className="yellow">무슨 일이?!</span>
           </h3>
         </div>
         <Link to='/test?phase=a' className='button'>
