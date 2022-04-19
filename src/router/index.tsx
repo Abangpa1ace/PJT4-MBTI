@@ -10,12 +10,12 @@ const routes = [
     title: "지금 우리 mbti는",
     element: <HomePage />,
   },
+  ...pages,
   {
     path: '*',
     title: '잘못된 접근입니다!',
     element: <NotFoundPage />,
   },
-  ...pages,
 ]
 
 const Router = () => {
