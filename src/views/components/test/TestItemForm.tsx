@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import s from '@/styles/mixin';
-import { slideLeft } from '@/styles/keyframes';
+import s, { slideLeft, theme } from '@/styles';
 
 type Props = {
   test: TestItem;
@@ -23,7 +22,7 @@ const TestItemForm: React.FC<Props> = ({ test, themeKey, clickOption }) => {
 export const ScTestItemForm = styled.div`${s(`flex-column; gap(20); tal;`)}`
 
 const ScTestOption = styled.button<{themeKey: string;}>`
-  ${({ theme, themeKey }) => s(`wh(80%,70); bgc(${theme[themeKey][0]}); br(24); o(0); t-x(100%); trans;`)}
+  ${({ themeKey }) => s(`wh(80%,70); bgc(${theme[themeKey][0]}); br(24); o(0); t-x(100%); trans;`)}
   &:hover ${s(`o(0.7);`)}
   &:nth-of-type(2) { animation-delay: .2s; }
   animation: ${slideLeft} .3s ease forwards;

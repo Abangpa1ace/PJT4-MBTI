@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from '@/router';
 import { ThemeProvider } from 'styled-components';
 import GlobalReset from './styles/reset';
-import theme from './styles/theme';
+import { theme } from './styles';
 import './index.css';
 
 ReactDOM.render(

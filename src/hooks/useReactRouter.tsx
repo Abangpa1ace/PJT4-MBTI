@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import qs from 'qs';
+import qs, { ParsedQs } from 'qs';
 interface ReturnType {
   // useLocation
   key: string;
   hash: string;
   pathname: string;
-  search: { [k in string]: string };
+  search: ParsedQs;
   state: any;
 
   // useNavigate (v5 useHistory)

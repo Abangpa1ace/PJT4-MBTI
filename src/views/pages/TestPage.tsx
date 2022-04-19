@@ -1,10 +1,10 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import testData from '@/db/testList';
 import { arrShuffle } from '@/utils/common';
-import s, { container } from '@/styles/mixin';
+import s, { container, theme } from '@/styles';
 import useReactRouter from '@/hooks/useReactRouter';
-import TestItemForm, { ScTestItemForm } from '@/views/components/test/TestItemForm';
+import TestItemForm from '@/views/components/test/TestItemForm';
 import TestProgressBar from '@/views/components/test/TestProgressBar';
 import { useSetRecoilState } from 'recoil';
 import { atomResultA, atomResultB } from '@/recoil/main';
@@ -63,7 +63,7 @@ const ScTestPage = styled.div`
 
 const TestNum = styled.p<{themeKey: string;}>`${s('wf; fs(24); bold;')}
   > span.num {
-    ${({ theme, themeKey }) => s(`c(${theme[themeKey][1]});`)}
+    ${({ themeKey }) => s(`c(${theme[themeKey][1]});`)}
   }
 `
 

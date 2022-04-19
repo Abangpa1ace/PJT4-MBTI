@@ -1,6 +1,4 @@
-import { showHide } from '@/styles/keyframes'
-import s from '@/styles/mixin'
-import React from 'react'
+import s, { showHide } from '@/styles'
 import styled from 'styled-components'
 
 const Loader = () => {

@@ -33,6 +33,7 @@ const GlobalReset = createGlobalStyle`
     object-fit: cover;
   }
   a {
+    display: inline-block;
     text-decoration: none;
   }
 `;

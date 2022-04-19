@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
-import s, { container } from '@/styles/mixin'
+import s, { container } from '@/styles'
 import Loader, { ScLoader } from '@/views/components/result/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { atomResultA, resultCodeA } from '@/recoil/main';
@@ -54,10 +54,10 @@ const ScMidResultPage = styled.div`
 
     h3 {
       ${s('fs(28);')}
-      span ${({ theme }) => s(`fs(28); c(${theme.purple[2]})`)}
+      span { ${({ theme }) => s(`fs(28); c(${theme.purple[2]})`)} }
     }
     ${ScLoader} ${s('t-yc;')}
   }
-`
+`;
 
 export default MidResultPage

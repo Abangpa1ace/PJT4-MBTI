@@ -1,4 +1,4 @@
-import s from '@/styles/mixin'
+import s from '@/styles'
 import React from 'react'
 import styled from 'styled-components'
 import { charOffset } from '@/constants';

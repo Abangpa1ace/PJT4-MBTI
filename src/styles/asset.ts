@@ -22,13 +22,13 @@ const customStyles: customStylesType = {
   // display: flex
   flex: () => `display: flex;`,
   'inline-flex': () => `display: inline-flex;`,
-  'flex-jc': (jc = 'center') => `justify-contents: ${jc};`,
+  'flex-jc': (jc = 'center') => `justify-content: ${jc};`,
   'flex-ai': (ai = 'center') => `align-items: ${ai};`,
   'flex-dr': (dr = 'row') => `flex-direction: ${dr};`,
   'flex-wrap': (wrap = 'wrap') => `display: flex; flex-wrap: ${wrap}`,
   gap: (g: string) => `gap: ${g};`,
-  'flex-center': () => `display: flex; justify-contents: center; align-items: center;`,
-  'flex-column': () => `display: flex; justify-contents: center; align-items: center; flex-direction: column;`,
+  'flex-center': () => `display: flex; justify-content: center; align-items: center;`,
+  'flex-column': () => `display: flex; justify-content: center; align-items: center; flex-direction: column;`,
 
   // width, height
   wh: (w: string, h?: string) => `width: ${w}; height: ${h || w};`,

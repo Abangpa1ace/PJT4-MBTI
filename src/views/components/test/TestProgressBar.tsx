@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import s from '@/styles/mixin';
-import { extendWidth } from '@/styles/keyframes';
+import s, { extendWidth, theme } from '@/styles';
 
 type Props = {
   length: number; 
@@ -23,7 +22,7 @@ const ScTestProgressBar = styled.ul<{length: number; themeKey: string;}>`
   ${s('flex; wh(100%,6); bgc(#e0e0e0); br(3); crop;')}
 
   > li {
-    ${({ theme, length, themeKey }) => s(`w(${100/length}%); h(100%); bgc(${theme[themeKey][1]}); o(0); -a(Red))`)}
+    ${({ length, themeKey }) => s(`w(${100/length}%); h(100%); bgc(${theme[themeKey][1]}); o(0); -a(Red))`)}
 
     &.show { 
       ${s('o(.9);')};

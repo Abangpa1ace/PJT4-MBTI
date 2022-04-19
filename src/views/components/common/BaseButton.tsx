@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import styled, { css } from 'styled-components';
-import s from '@/styles/mixin';
+import s, { media, theme } from '@/styles';
 
 type Props = {
   children: React.ReactNode;
@@ -22,10 +22,10 @@ export const ScBaseButton = styled.button`
     ${s(`o(.7)`)}
   }
 
-  ${({ theme, color }) => {
+  ${({ color }) => {
     switch(color) {
       case 'green':
-        return css`background: ${theme}; color: white;`
+        return css`background: ${theme.green[0]}; color: white;`
       case 'blue':
         return css`background: #00b8ff; color: white;`
       case 'gray':
@@ -35,6 +35,10 @@ export const ScBaseButton = styled.button`
         return s(`bgc(${theme.purple[1]}); c(white)`)
     }
   }}
+
+  @media ${media.ml} {
+    ${s('wf; min-w(150);')}
+  } 
 `;
 
 export default memo(BaseButton)
