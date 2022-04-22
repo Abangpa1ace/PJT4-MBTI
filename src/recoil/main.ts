@@ -37,3 +37,8 @@ export const resultCodeB = selector<TestCodes>({
     return setMBTI(list)
   }
 })
+
+export const atomDeviceSize = atom<DeviceSizeType>({
+  key: 'deviceSize',
+  default: 'm',
+})

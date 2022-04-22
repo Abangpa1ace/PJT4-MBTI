@@ -4,7 +4,7 @@ import s, { container, theme } from '@/styles';
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   const { navigate } = useReactRouter()
 
   return (
@@ -16,8 +16,7 @@ const HomePage = () => {
             <img src="/src/asset/img/intro.jpeg" alt="intro-difference-img" />
           </div>
           <h3>
-            <span className="green">파릇파릇</span> 했던 그 시절의 나, <br />
-            입사하더니 대체 <span className="yellow">무슨 일이?!</span>
+            <span className="green">파릇파릇</span> 하기만했던 나, 입사후에 <span className="yellow">무슨 일이?!</span>
           </h3>
         </div>
         <BaseButton onClick={() => navigate('/test?phase=a')} color="purple" className="button">테스트 하러 가기</BaseButton>
