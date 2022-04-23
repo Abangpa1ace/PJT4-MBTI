@@ -1,5 +1,4 @@
 import { useRoutes } from 'react-router-dom';
-import { useResizeDetector } from 'react-resize-detector';
 import RouterTitle from 'react-router-title';
 import HomePage from '@/views/pages/HomePage';
 import pages from './pages';
@@ -21,10 +20,9 @@ const routes = [
 
 const Router = () => {
   let router = useRoutes(routes)
-  const { ref } = useResizeDetector();
 
   return (
-    <div className="app" ref={ref}>
+    <div className="app">
       <RouterTitle routesConfig={routes} />
       {router}
     </div>
