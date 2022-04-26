@@ -21,18 +21,18 @@ const TestPage: React.FC = () => {
   const [index, setIndex] = useState<number>(0)
   const [test, setTest] = useState<TestItem>(testList[index])
 
-  const setResultA = useSetRecoilState(atomResultA);
-  const setResultB = useSetRecoilState(atomResultB);
+  const setResult = useSetRecoilState(isPhaseA ? atomResultA : atomResultB);
+  // const setResultA = useSetRecoilState(atomResultA);
+  // const setResultB = useSetRecoilState(atomResultB);
 
   const clickOption = (type: TestAnswer) => {
     testList[index].result = type
+    setResult(testList)
     if (index === testList.length - 1) {
       if (isPhaseA) {
-        setResultA(testList)
         navigate('/result/mid')
       }
       else {
-        setResultB(testList)
         navigate('/result/final')
       }
     }
