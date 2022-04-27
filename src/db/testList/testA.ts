@@ -1,42 +1,26 @@
 const testAList: TestList = [
   {
     category: 'EI',
-    question: 'MBTI 1번째 질문입니다. 무엇을 고르시겠습니까?',
+    question: '오늘은 과제를 하는 날! 나는?',
     options: {
-      E: 'E1',
-      I: 'I1',
+      I: '따스한 햇살과 책이 있는 도서관, 조용히 나 혼자서.',
+      E: '동기와 함께~ 인스타에서 봤던 힙한 카페로!',
     }
   },
   {
     category: 'EI',
-    question: 'MBTI 2번째 질문입니다. 무엇을 고르시겠습니까?',
+    question: '오전 강의가 끝나고 점심시간~ 배고픈걸?',
     options: {
-      E: 'E2',
-      I: 'I2',
+      E: '오점뭐~ 단톡방에서 밥 같이 먹을 파티를 구한다!',
+      I: '기숙사 가는 길, 먹고 싶었던 떡볶이를 포장해간다.',
     }
   },
   {
     category: 'EI',
-    question: 'MBTI 3번째 질문입니다. 무엇을 고르시겠습니까?',
+    question: '코로나 때문에.. 이번 학기는 온라인 강의?!',
     options: {
-      E: 'E3',
-      I: 'I3',
-    }
-  },
-  {
-    category: 'EI',
-    question: 'MBTI 4번째 질문입니다. 무엇을 고르시겠습니까?',
-    options: {
-      E: 'E4',
-      I: 'I4',
-    }
-  },
-  {
-    category: 'EI',
-    question: 'MBTI 5번째 질문입니다. 무엇을 고르시겠습니까?',
-    options: {
-      E: 'E5',
-      I: 'I5',
+      E: '방에만 있으니 답답쓰! 내겐 오프라인 강의가 필요하다!',
+      I: '사강 개꿀~ 드립커피 한잔과 함께 행복하게 듣는다~',
     }
   },
   {
