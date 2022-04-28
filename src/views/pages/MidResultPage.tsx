@@ -7,6 +7,7 @@ import Loader, { ScLoader } from '@/views/components/result/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { atomResultA, resultCodeA } from '@/recoil/main';
 import CharSprite from '../components/result/CharSprite';
+import TestResultForm from '../components/test/TestResultForm';
 
 const MidResultPage: React.FC = () => {
   const { navigate } = useReactRouter()
@@ -35,6 +36,7 @@ const MidResultPage: React.FC = () => {
           <>
             <CharSprite phase="a" code={resultCode} />
             <h3>학창시절의 나는? <span>{resultCode}!</span></h3>
+            <TestResultForm />
             <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
             <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
           </>

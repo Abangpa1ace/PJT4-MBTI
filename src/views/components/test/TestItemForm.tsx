@@ -19,12 +19,13 @@ const TestItemForm: React.FC<Props> = ({ test, themeKey, clickOption }) => {
   )
 }
 
-export const ScTestItemForm = styled.div`${s(`flex-column; gap(20); tal;`)}`
+export const ScTestItemForm = styled.div`${s(`flex-column; gap(20); wf; tal;`)}`
 
 const ScTestOption = styled.button<{themeKey: string;}>`
-  ${({ themeKey }) => s(`wh(80%,70); bgc(${theme[themeKey][0]}); br(24); o(0); t-x(100%); trans;`)}
+  ${({ themeKey }) => s(`wh(80%,80); p(10,15); bgc(${theme[themeKey][0]}); fs(18,24); br(24); o(0); t-x(100%); trans;`)}
   &:hover ${s(`o(0.7);`)}
   &:nth-of-type(2) { animation-delay: .2s; }
+  white-space: pre-wrap;
   animation: ${slideLeft} .3s ease forwards;
 `
 

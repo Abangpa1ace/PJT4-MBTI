@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import testData from '@/db/testList';
 import { arrShuffle } from '@/utils/common';
@@ -14,6 +14,11 @@ const listB = arrShuffle(testData.phaseB);
 
 const TestPage: React.FC = () => {
   const { search, navigate } = useReactRouter()
+
+  useEffect(() => {
+    if (!search.phase || !['a','b'].includes(search.phase)) navigate('/')
+  }, [])
+
   const isPhaseA = search.phase === 'a'
   const themeKey = isPhaseA ? 'green' : 'yellow'
   
@@ -22,17 +27,17 @@ const TestPage: React.FC = () => {
   const [test, setTest] = useState<TestItem>(testList[index])
 
   const setResult = useSetRecoilState(isPhaseA ? atomResultA : atomResultB);
-  // const setResultA = useSetRecoilState(atomResultA);
-  // const setResultB = useSetRecoilState(atomResultB);
 
   const clickOption = (type: TestAnswer) => {
     testList[index].result = type
-    setResult(testList)
+    
     if (index === testList.length - 1) {
       if (isPhaseA) {
+        setResult(testList)
         navigate('/result/mid')
       }
       else {
+        setResult(testList)
         navigate('/result/final')
       }
     }
