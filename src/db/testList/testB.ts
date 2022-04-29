@@ -1,7 +1,7 @@
 const testBList: TestList = [
   {
     category: 'EI',
-    question: '출근길 지하철, 앞에 회사동료의 뒷모습이 보인다면?',
+    question: '출근길 지하철, \n앞에 회사동료의 뒷모습이 보인다면?',
     options: {
       E: '안녕하세요! \n일찍 오셨네요? 어쩌고저쩌고~',
       I: '인사는 회사가서 하면되지ㅎㅎ \n조용히 뒤따라간다',
@@ -9,7 +9,7 @@ const testBList: TestList = [
   },
   {
     category: 'EI',
-    question: '팀장님의 법인카드 찬스! 번개회식이 잡혔다?!',
+    question: '팀장님의 법인카드 찬스! \n번개회식이 잡혔다?!',
     options: {
       E: '개꿀~ 오늘은 소고기 굽는 날이다!',
       I: '집에서 요리하고, \n넷플보면서 맥주 한 잔 하려했는데..',
@@ -17,7 +17,7 @@ const testBList: TestList = [
   },
   {
     category: 'EI',
-    question: '카톡을 보던 중, 회사 후배가 오늘 생일이다?',
+    question: '카톡을 보던 중, \n회사 후배가 오늘 생일이다?',
     options: {
       E: '단톡방을 켜고~ \nOO씨~ 생일 축하드려요!!',
       I: '누가 먼저 이니시 걸겠지.. \n우선 기다린다~',
@@ -25,7 +25,7 @@ const testBList: TestList = [
   },
   {
     category: 'SN',
-    question: '담당한 상품의 리뉴얼을 맡은 나, 이번 프로젝트는?',
+    question: '담당한 상품의 리뉴얼을 맡은 나, \n이번 프로젝트는?',
     options: {
       S: '기존의 컨셉을 최대한 고수하면서, \n안정성을 유지!',
       N: '후훗.. 내 능력을 보여줄 땐가? \n새로운 기획을 시도!',
@@ -33,7 +33,7 @@ const testBList: TestList = [
   },
   {
     category: 'SN',
-    question: '출근하는 길, 오늘따라 비가 와서 계단이 미끄럽다.',
+    question: '출근하는 길, \n오늘따라 비가 와서 계단이 미끄럽다.',
     options: {
       S: '계단이 미끄럽네? 조심조심.. \n사무실에 박스라도 깔까?',
       N: '여기서 구르면 팔이 부러지고.. \n핸드폰도 박살나고.. 밑사람과 충돌하고..',
@@ -41,7 +41,7 @@ const testBList: TestList = [
   },
   {
     category: 'SN',
-    question: '업무를 진행하고 있는 나. 관련부서 분들과 협업할 땐?',
+    question: '업무를 진행하고 있는 나. \n관련부서 분들과 협업할 땐?',
     options: {
       S: '지금 여기까지 했으니.. \n질문목록을 정리해서 한분 한분 찾아뵌다.',
       N: '오 이거 좋을거 같은데?!(질문) \n오 이것도 필요해!(질문)',
@@ -49,7 +49,7 @@ const testBList: TestList = [
   },
   {
     category: 'TF',
-    question: '이직을 준비하는 나, 두 군데의 면접이 예정됬는데?',
+    question: '이직을 준비하는 나, \n두 군데의 면접이 예정됬는데?',
     options: {
       T: '내 커리어를 \n발전시키는 일이 좋겠어!',
       F: '좀 더 흥미롭고 \n끌리는 일이 좋겠어!',
@@ -57,7 +57,7 @@ const testBList: TestList = [
   },
   {
     category: 'TF',
-    question: '이직 면접이 끝나고, 저희 회사에 궁금한 점이 있나요?',
+    question: '이직 면접이 끝나고, \n저희 회사에 궁금한 점이 있나요?',
     options: {
       T: '회사에서 원하는 \n제 롤과 역량은 어떤 걸까요?',
       F: '근무환경은 어떤가요? \n팀 분위기는 좋나요?',
@@ -65,7 +65,7 @@ const testBList: TestList = [
   },
   {
     category: 'TF',
-    question: '옆 부서 과장님이 오신다. OO씨! XX대리 어디갔나?',
+    question: '옆 부서 과장님이 오신다. \n몰랑씨! 양대리 어디갔나?',
     options: {
       T: '약 3시경, 병세가 있으셔서 \n반차 사용했습니다!',
       F: '어제 야근 때문에 피곤하셔서인지, \n잠깐 병원 가셨습니다~',
@@ -73,7 +73,7 @@ const testBList: TestList = [
   },
   {
     category: 'JP',
-    question: '출근해서 오늘 업무를 확인하는 나, 문득 어제 본 주식이 떠오른다면?',
+    question: '출근해서 오늘 업무를 확인하는 나, \n문득 어제 본 주식이 떠오른다면?',
     options: {
       J: '우선 오늘 테스크들 먼저 정리! \n용무는 천천히~',
       P: '잠깐 켜놓고 일하면 되니까! \n주식정보를 켠다~',
@@ -89,7 +89,7 @@ const testBList: TestList = [
   },
   {
     category: 'JP',
-    question: 'OO씨~ 미안한데 잠깐 이거 해줄 수 있나?',
+    question: '몰랑씨~ 미안한데 잠깐 이거 해줄 수 있나?',
     options: {
       J: '엇! 일정 확인해보고 \n바로 말씀드리겠습니다~',
       P: '아마 가능할 것 같습니다ㅎㅎ \n필요한 거 있음 말씀드릴게요!',

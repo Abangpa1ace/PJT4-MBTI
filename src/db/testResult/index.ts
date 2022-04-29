@@ -1,4 +1,4 @@
-const testResult: { [k in TestCodes]: string[] } = {
+export const testResult: TestResultList = {
   INFJ: [
     '', 
     '', 
@@ -39,11 +39,21 @@ const testResult: { [k in TestCodes]: string[] } = {
     '', 
     ''
   ],
-  ENFJ: [
-    '', 
-    '', 
-    ''
-  ],
+  ENFJ: {
+    explanations: [
+      'ENFJ 특징은 따뜻하고 적극적이며 책임감이 강하고 사교성이 풍부하고 동정심이 많습니다.',
+      '상당히 이타적이고 민첩하고 인화를 중요시하며 참을성이 많으며, 다른 사람들의 생각이나 의견에 진지한 관심을 가지고 공동선을 위하여 다른 사람의 의견에 대체로 동의합니다.',
+      '미래의 가능성을 추구하며 편안하고 능란하게 계획을 제시하고 집단을 이끌어가는 능력이 있습니다. ',
+    ],
+    careers: [
+      '가치 있다고 생각하는 프로젝트의 문제점들에 대해 창의적인 해결책을 제시할 수 있는 일. 그러면서 다른 사람들을 위한 노력이 긍정적인 결과로 나타날 수 있는 일',
+      '문제점을 창의적으로 해결할 수 있는 충분한 시간이 주어지고, 이에 대해 다른 사람들과 의견을 나눌 수 있는 일',
+      '다양한 활동이 인정되는 한편 비교적 정돈된 환경에서 계획적으로 할 수 있는 일',
+    ],
+    recommends: '커뮤니케이션(캐스터, 통역가), 상담/교육(심리상담사, 교사), 비즈니스(마케팅팀, 캐스팅 디렉터)',
+    best: 'INFP',
+    worst: 'ISTJ',
+  },
   ENFP: [
     '', 
     '', 
@@ -81,4 +91,6 @@ const testResult: { [k in TestCodes]: string[] } = {
   ], 
 }
 
-export default testResult;
+const getTestResult = (code: TestCodes) => testResult[code];
+
+export default getTestResult

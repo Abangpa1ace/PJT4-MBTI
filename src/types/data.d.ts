@@ -21,8 +21,20 @@ interface TestItem {
 
 type TestList = TestItem[];
 
-interface TestResultItem extends TestItem {
+interface TestSubmitItem extends TestItem {
   result: TestAnswer
 }
 
-type TestResultList = TestResultItem[];
+type TestSubmitList = TestSubmitItem[];
+
+interface TestResultItem {
+  explanations: string[];
+  careers: string[];
+  recommends: string;
+  best: TestCodes;
+  worst: TestCodes;
+}
+
+type TestResultList = {
+  [k in TestCodes]: TestResultItem
+}

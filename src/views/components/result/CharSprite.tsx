@@ -5,7 +5,8 @@ import { charOffset } from '@/constants';
 
 type Props = {
   code: TestCodes;
-  phase: 'a' | 'b'
+  phase: 'a' | 'b';
+  onClick?: () => void;
 }
 
 type ScProps = {
@@ -14,9 +15,9 @@ type ScProps = {
   phase: 'a' | 'b'
 }
 
-const CharSprite: React.FC<Props> = ({ code, phase }) => {
+const CharSprite: React.FC<Props> = ({ code, phase, onClick }) => {
   return (
-    <ScCharSprite {...charOffset[code]} phase={phase} />
+    <ScCharSprite {...charOffset[code]} phase={phase} onClick={onClick} />
   )
 }
 

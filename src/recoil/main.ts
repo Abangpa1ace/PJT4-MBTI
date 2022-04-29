@@ -10,7 +10,7 @@ const storageAtom = (isPersist = true) => {
   return persistAtom
 }
 
-export const atomResultA = atom<TestResultList>({
+export const atomResultA = atom<TestSubmitList>({
   key: 'resultA',
   default: [],
   effects_UNSTABLE: [storageAtom(false)],
@@ -24,7 +24,7 @@ export const resultCodeA = selector<TestCodes>({
   }
 })
 
-export const atomResultB = atom<TestResultList>({
+export const atomResultB = atom<TestSubmitList>({
   key: 'resultB',
   default: [],
   effects_UNSTABLE: [storageAtom(false)],

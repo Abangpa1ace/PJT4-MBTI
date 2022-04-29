@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+import { container } from '@/styles';
 import { useRoutes } from 'react-router-dom';
 import RouterTitle from 'react-router-title';
 import HomePage from '@/views/pages/HomePage';
@@ -22,11 +24,17 @@ const Router = () => {
   let router = useRoutes(routes)
 
   return (
-    <div className="app">
+    <ScRouter className="router">
       <RouterTitle routesConfig={routes} />
       {router}
-    </div>
+    </ScRouter>
   )
 }
+
+const ScRouter = styled.div`
+  > div > section {
+    ${container}
+  }
+`
 
 export default Router

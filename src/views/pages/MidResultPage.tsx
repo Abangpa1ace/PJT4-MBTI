@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import s, { container } from '@/styles'
 import Loader, { ScLoader } from '@/views/components/result/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { atomResultA, resultCodeA } from '@/recoil/main';
-import CharSprite from '../components/result/CharSprite';
-import TestResultForm from '../components/test/TestResultForm';
+import BaseButton, { ScBaseButton } from '@/views/components/common/BaseButton';
+import CharSprite from '@/views/components/result/CharSprite';
+import TestResultForm from '@/views/components/test/TestResultForm';
 
 const MidResultPage: React.FC = () => {
   const { navigate } = useReactRouter()
   const [loading, setLoading] = useState<boolean>(true);
   const resetResultA = useResetRecoilState(atomResultA)
   const resultCode = useRecoilValue<TestCodes>(resultCodeA)
+
 
   useEffect(() => {
     if (!resultCode) navigate('/test?phase=a')
@@ -34,11 +35,15 @@ const MidResultPage: React.FC = () => {
         {
           loading ? <Loader /> :
           <>
-            <CharSprite phase="a" code={resultCode} />
-            <h3>학창시절의 나는? <span>{resultCode}!</span></h3>
-            <TestResultForm />
-            <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
-            <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
+            <div className="result-header">
+              <CharSprite phase="a" code={resultCode} />
+              <h3>학창시절의 나는? <span>{resultCode}!</span></h3>
+            </div>
+            <TestResultForm code={resultCode} phase="a" />
+            <div className="btn-wrapper">
+              <BaseButton color="purple" onClick={() => navigate('/test?phase=b')}>다음 테스트 하러 가기</BaseButton>
+              <BaseButton color="gray" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
+            </div>
           </>
         }
       </section>
@@ -47,19 +52,16 @@ const MidResultPage: React.FC = () => {
 }
 
 const ScMidResultPage = styled.div`
-  ${ScLoader} {
-    > img { transform: scaleX(-1); }
-  }
-
-  > section {
-    ${container};
-
+  .result-header { ${s('tac')};
     h3 {
       ${s('fs(28);')}
       span { ${({ theme }) => s(`fs(28); c(${theme.purple[2]})`)} }
     }
-    ${ScLoader} ${s('t-yc;')}
   }
+
+  .btn-wrapper { ${s('tac')}; 
+    ${ScBaseButton} ${s('mt(10)')}
+  };
 `;
 
 export default MidResultPage

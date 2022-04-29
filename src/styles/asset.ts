@@ -17,7 +17,7 @@ const customStyles: customStylesType = {
   dib: () => `display: inline-block;`,
   di: () => `display: inline;`,
   dn: () => `display: none;`,
-  cnt: (cnt = '') => `content: ${cnt};`,
+  cnt: (cnt = 's') => `content: ${cnt};`,
 
   // display: flex
   flex: () => `display: flex;`,

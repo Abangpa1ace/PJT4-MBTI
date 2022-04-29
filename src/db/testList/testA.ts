@@ -17,7 +17,7 @@ const testAList: TestList = [
   },
   {
     category: 'EI',
-    question: '코로나 때문에.. 이번 학기는 온라인 강의?!',
+    question: '코로나 때문에.. \n이번 학기는 온라인 강의?!',
     options: {
       E: '방에만 있으니 답답쓰! \n내겐 오프라인 강의가 필요하다!',
       I: '사강 개꿀~ 드립커피 한잔과 \n함께 행복하게 듣는다~',
@@ -25,7 +25,7 @@ const testAList: TestList = [
   },
   {
     category: 'SN',
-    question: '자기 전 유튜브를 틀고... 오늘 볼 영상은?',
+    question: '자기 전 유튜브를 틀고... \n오늘 볼 영상은?',
     options: {
       S: '먹고싶은 떡볶이 먹방~ \n내게 도움되는 운동, 주식 영상!',
       N: '가고싶은 여행 브이로그~ \n미스테리 신기한 영상!',
@@ -33,7 +33,7 @@ const testAList: TestList = [
   },
   {
     category: 'SN',
-    question: '강의 중간 쉬는시간, 친구의 TMI 토크가 길어지는데..',
+    question: '강의 중간 쉬는시간, \n친구의 TMI 토크가 길어지는데..',
     options: {
       S: '멍.. 머엉... \n듣는척하다 보면 끝나겠지~',
       N: '오늘 저녁 뭐먹지? \n날씨도 좋은데 놀러가고싶네?',
@@ -41,7 +41,7 @@ const testAList: TestList = [
   },
   {
     category: 'SN',
-    question: '머리가 길어서 미용실에 온 나, 디자이너 쌤이 새로운 스타일을 제안한다!',
+    question: '머리가 길어서 미용실에 온 나, \n디자이너 쌤이 새로운 스타일을 제안한다!',
     options: {
       S: '아ㅎㅎ 고민해볼게요~ \n우선 오늘은 원래 짜르던대로 부탁드려요!',
       N: '헤어스타일은 아이덴티티! \n새로운 스타일 도전!',
@@ -49,7 +49,7 @@ const testAList: TestList = [
   },
   {
     category: 'TF',
-    question: '과동기와 컾타 중, 나에게 고민을 토로한다.',
+    question: '과동기와 컾타 중, \n나에게 고민을 토로한다.',
     options: {
       F: '그 사람이 잘못했네! \n친구의 마음에 적극적으로 공감한다!',
       T: '어떤 상황이었는데? \n음.. 이건 너도 잘못한 것 같은걸?',
@@ -57,7 +57,7 @@ const testAList: TestList = [
   },
   {
     category: 'TF',
-    question: '와! 가평으로 동아리 MT를 왔다! 인스타를 켜고~',
+    question: '와! 가평으로 동아리 MT를 왔다! \n인스타를 켜고~',
     options: {
       T: '주변 풍경, \n세련된 펜션 사진위주로 업로드!',
       F: '동기들과 셀카~ \n사람들과 단체사진을 업로드!',
@@ -73,7 +73,7 @@ const testAList: TestList = [
   },
   {
     category: 'JP',
-    question: '과동기들과 자취방 집들이~ 요리를 해야겠는걸?',
+    question: '과동기들과 자취방 집들이~ \n요리를 해야겠는걸?',
     options: {
       J: '백종원 유튜브를 틀어놓고, \n핸드폰으로 레시피를 켜놓고 뚝딱뚝딱~',
       P: '요리는 손맛이지! 재료는 손에 잡히는데로~ 이 정도면 간이 맞겠.. 어..?',
@@ -81,7 +81,7 @@ const testAList: TestList = [
   },
   {
     category: 'JP',
-    question: '신나게 놀다보니 벌써 중간고사 시즌? 이제 공부를..',
+    question: '신나게 놀다보니 벌써 중간고사 시즌? \n이제 공부를..',
     options: {
       J: '캘린더를 꺼내서, \n언제 어느 과목을 공부할 지 다이어리에 정리~',
       P: '우선 당장 급한 과목부터! \n빨리빨리 하다보면 한 바퀴 돌 수 있겠지!',
@@ -89,7 +89,7 @@ const testAList: TestList = [
   },
   {
     category: 'JP',
-    question: '동기들과 핫플 나들이~ SNS 맛집을 가려고 하는데',
+    question: '동기들과 핫플 나들이~ \nSNS 맛집을 가려고 하는데',
     options: {
       J: '메뉴와 리뷰를 꼼꼼히 보고, \n우선 전화예약부터...',
       P: '가서 제일 땡기는 것을 먹겠어~ \n웨이팅 있으면 주변 구경하지 뭐!',

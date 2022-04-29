@@ -60,11 +60,7 @@ const TestPage: React.FC = () => {
   )
 }
 
-const ScTestPage = styled.div`
-  section {
-    ${container};
-  }
-`;
+const ScTestPage = styled.div``;
 
 const TestNum = styled.p<{themeKey: string;}>`${s('wf; fs(24); bold;')}
   > span.num {

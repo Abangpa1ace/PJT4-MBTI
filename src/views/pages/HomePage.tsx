@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import s, { container, theme } from '@/styles';
+import s, { theme } from '@/styles';
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 
@@ -26,24 +26,20 @@ const HomePage: React.FC = () => {
 }
 
 const ScHomePage = styled.div`
-  > section { 
-    ${container};
-
-    h3 { ${s('fs(24,28); c(#7c7c7c); tac;')}
-      span.green { 
-        color: ${theme.green[1]} 
-      }
-      span.yellow { 
-        color: ${theme.yellow[1]} 
-      }
+  h3 { ${s('fs(24,28); c(#7c7c7c); tac;')}
+    span.green { 
+      color: ${theme.green[1]} 
     }
-    h2 ${s(`fs(40);`)}
-
-    .button ${s('mt(30);')}
-
-    .image-holder { ${s(`w(100%); crop;`)}
-      img ${s(`mb(-12%); t-y(-12%);`)}
+    span.yellow { 
+      color: ${theme.yellow[1]} 
     }
+  }
+  h2 ${s(`fs(40);`)}
+
+  .button ${s('mt(30);')}
+
+  .image-holder { ${s(`w(100%); crop;`)}
+    img ${s(`mb(-12%); t-y(-12%);`)}
   }
 `;
 

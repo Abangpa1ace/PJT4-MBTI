@@ -1,5 +1,5 @@
 import Router from '@/router';
-import { useCallback, useMemo, useEffect } from 'react';
+import { useMemo, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { atomDeviceSize } from './recoil/main';
 import { debounce } from 'lodash';
