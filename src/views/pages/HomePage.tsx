@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import s, { theme } from '@/styles';
+import { clip } from '@/utils/url';
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 
@@ -20,6 +21,7 @@ const HomePage: React.FC = () => {
           </h3>
         </div>
         <BaseButton onClick={() => navigate('/test?phase=a')} color="purple" className="button">테스트 하러 가기</BaseButton>
+        <button onClick={() => clip()}>링크 복사</button>
       </section>
     </ScHomePage>
   )
