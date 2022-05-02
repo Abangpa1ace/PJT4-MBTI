@@ -1,4 +1,4 @@
-import s, { showHide } from '@/styles'
+import s, { showHide, media } from '@/styles'
 import styled from 'styled-components'
 
 const Loader = () => {
@@ -30,6 +30,10 @@ export const ScLoader = styled.div`
         animation-delay: 1s;
       }
     }  
+  }
+
+  @media ${media.ml} { ${s('flex-column; flex-jc(center); h(100vh); t-y(-30px);')}
+    img ${s('wh(120);')}
   }
 `
 

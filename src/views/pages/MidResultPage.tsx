@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import useReactRouter from '@/hooks/useReactRouter';
-import s, { container } from '@/styles'
-import Loader, { ScLoader } from '@/views/components/result/Loader';
+import s, { media } from '@/styles'
+import Loader from '@/views/components/result/Loader';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import { atomResultA, resultCodeA } from '@/recoil/main';
 import BaseButton, { ScBaseButton } from '@/views/components/common/BaseButton';
@@ -62,6 +62,12 @@ const ScMidResultPage = styled.div`
   .btn-wrapper { ${s('tac')}; 
     ${ScBaseButton} ${s('mt(10)')}
   };
+
+  @media ${media.ml} { 
+    .result-header {
+      h3 ${s('fs(24);')}
+    }
+  }
 `;
 
 export default MidResultPage

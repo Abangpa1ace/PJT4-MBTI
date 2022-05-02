@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import s, { slideLeft, theme } from '@/styles';
+import s, { slideLeft, theme, media } from '@/styles';
 
 type Props = {
   test: TestItem;
@@ -20,7 +20,14 @@ const TestItemForm: React.FC<Props> = ({ test, themeKey, clickOption }) => {
 }
 
 export const ScTestItemForm = styled.div`${s(`flex-column; gap(20); wf; tal;`)}
-  h2 { white-space: pre-wrap; }
+  h2 { 
+    ${s('c(#595959);')}
+    white-space: pre-wrap; 
+  }
+
+  @media ${media.ml} { 
+    h2 ${s('fs(22,28);')}
+  }
 `
 
 const ScTestOption = styled.button<{themeKey: string;}>`
@@ -29,6 +36,10 @@ const ScTestOption = styled.button<{themeKey: string;}>`
   &:nth-of-type(2) { animation-delay: .2s; }
   white-space: pre-wrap;
   animation: ${slideLeft} .3s ease forwards;
+
+  @media ${media.ml} { 
+    ${s('wh(90%, 70); p(6,15); fs(16,20);')}
+  }
 `
 
 export default TestItemForm

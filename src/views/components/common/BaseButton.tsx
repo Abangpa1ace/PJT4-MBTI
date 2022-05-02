@@ -37,7 +37,7 @@ export const ScBaseButton = styled.button`
   }}
 
   @media ${media.ml} {
-    ${s('wf; min-w(150);')}
+    ${s('wf; h(48); min-w(150); fs(22);')}
   } 
 `;
 

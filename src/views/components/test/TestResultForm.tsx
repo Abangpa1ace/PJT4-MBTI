@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import s, { theme } from '@/styles'
+import s, { theme, media } from '@/styles'
 import getTestResult from '@/db/testResult';
 import CharSprite from '@/views/components/result/CharSprite';
 
@@ -45,6 +45,14 @@ const ScTestResultForm = styled.div` ${s(`wf;`)}
   .match-list { ${s('flex-center; mt(24);')}
     li { ${s('wf; tac;')}} 
       p ${s('c(#333);')}
+    }
+  }
+
+  @media ${media.ml} { 
+    h3.title ${s('m(16,0,12); fs(18);')}
+    > p ${s('fs(16,24);')}
+    .match-list { ${s('mt(6);')}
+      li > p ${s('fs(20);')}
     }
   }
 `

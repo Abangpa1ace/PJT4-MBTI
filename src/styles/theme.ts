@@ -6,7 +6,7 @@ export const theme: ThemeType = {
 
 export const screen: MediaType = {
   mm: '375px',
-  ml: '480px',
+  ml: '520px',
   tm: '768px',
   tl: '1024px',
   ds: '1280px',

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import testData from '@/db/testList';
 import { arrShuffle } from '@/utils/common';
-import s, { container, theme } from '@/styles';
+import s, { theme, media } from '@/styles';
 import useReactRouter from '@/hooks/useReactRouter';
 import TestItemForm from '@/views/components/test/TestItemForm';
 import TestProgressBar from '@/views/components/test/TestProgressBar';
@@ -32,14 +32,8 @@ const TestPage: React.FC = () => {
     testList[index].result = type
     
     if (index === testList.length - 1) {
-      if (isPhaseA) {
-        setResult(testList)
-        navigate('/result/mid')
-      }
-      else {
-        setResult(testList)
-        navigate('/result/final')
-      }
+      setResult(testList)
+      navigate(isPhaseA ? '/result/mid' : '/result/final')
     }
     else {
       setTest(testList[index+1])
@@ -60,11 +54,15 @@ const TestPage: React.FC = () => {
   )
 }
 
-const ScTestPage = styled.div``;
+const ScTestPage = styled.div`
+`;
 
-const TestNum = styled.p<{themeKey: string;}>`${s('wf; fs(24); bold;')}
+const TestNum = styled.p<{themeKey: string;}>`${s('wf; c(#595959); fs(24); bold;')}
   > span.num {
     ${({ themeKey }) => s(`c(${theme[themeKey][1]});`)}
+  }
+  @media ${media.ml} { 
+    ${s('fs(20);')}
   }
 `
 
