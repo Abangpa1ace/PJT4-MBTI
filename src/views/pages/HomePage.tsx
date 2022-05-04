@@ -4,6 +4,7 @@ import s, { theme, media } from '@/styles';
 import { clip } from '@/utils/url';
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
+import { RiFileCopyLine } from 'react-icons/ri';
 
 const HomePage: React.FC = () => {
   const { navigate } = useReactRouter()
@@ -21,13 +22,18 @@ const HomePage: React.FC = () => {
           </h3>
         </div>
         <BaseButton onClick={() => navigate('/test?phase=a')} color="purple" className="button">테스트 하러 가기</BaseButton>
-        <button onClick={() => clip()}>링크 복사</button>
+        <ButtonWrapper>
+          <button className="clip" onClick={() => clip()}>
+            <RiFileCopyLine />
+          </button>
+        </ButtonWrapper>
       </section>
     </ScHomePage>
   )
 }
 
 const ScHomePage = styled.div`
+  section ${s('rel;')}
   h2 ${s(`fs(40);`)}
   h3 { ${s('fs(24,28); c(#7c7c7c); tac;')}
     span.green { 
@@ -48,6 +54,17 @@ const ScHomePage = styled.div`
     .image-holder ${s('px(20);')}
     h3, h3 > span ${s('fs(18,24);')}
     .button ${s('mt(10);')}
+  }
+`;
+
+const ButtonWrapper = styled.div`
+  ${s('flex-center; abs; alb(0,60); wf;')}
+
+  > button {
+    ${s('flex-center; wh(40); br(50%);')}
+    &.clip ${s('bgc(#F83A00)')}
+    svg { fill: #fff; }
+    &:hover ${s('o(.7);')}
   }
 `;
 
