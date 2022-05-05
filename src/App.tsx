@@ -4,7 +4,14 @@ import { useSetRecoilState } from 'recoil';
 import { atomDeviceSize } from './recoil/main';
 import { debounce } from 'lodash';
 
-const App = () => {
+const App = () => {  
+  useEffect(() => {
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+      if (!kakao.isInitialized()) kakao.init(import.meta.env.VITE_KAKAO_API_KEY)
+    }
+  }, [])
+
   const setDeviceSize = useSetRecoilState(atomDeviceSize);
   const onResize = useMemo(
     () => debounce(() => {

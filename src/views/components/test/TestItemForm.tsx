@@ -38,7 +38,7 @@ const ScTestOption = styled.button<{themeKey: string;}>`
   animation: ${slideLeft} .3s ease forwards;
 
   @media ${media.ml} { 
-    ${s('wh(90%, 70); p(6,15); fs(16,20);')}
+    ${s('wh(90%, 70); p(6,15); fs(16,22);')}
   }
 `
 

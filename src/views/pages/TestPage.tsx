@@ -4,6 +4,7 @@ import testData from '@/db/testList';
 import { arrShuffle } from '@/utils/common';
 import s, { theme, media } from '@/styles';
 import useReactRouter from '@/hooks/useReactRouter';
+import useRouteState from '@/hooks/useRouteState';
 import TestItemForm from '@/views/components/test/TestItemForm';
 import TestProgressBar from '@/views/components/test/TestProgressBar';
 import { useSetRecoilState } from 'recoil';
@@ -13,13 +14,15 @@ const listA = arrShuffle(testData.phaseA);
 const listB = arrShuffle(testData.phaseB);
 
 const TestPage: React.FC = () => {
-  const { search, navigate } = useReactRouter()
-
+  const { query, navigate } = useReactRouter()
+  
+  console.log('created')
   useEffect(() => {
-    if (!search.phase || !['a','b'].includes(search.phase)) navigate('/')
+    console.log('mounted')
+    if (!query.phase || !['a','b'].includes(query.phase)) navigate('/')
   }, [])
 
-  const isPhaseA = search.phase === 'a'
+  const isPhaseA = query.phase === 'a'
   const themeKey = isPhaseA ? 'green' : 'yellow'
   
   const testList = isPhaseA ? listA : listB
