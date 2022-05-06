@@ -10,7 +10,7 @@ type Props = {
 }
 
 const TestResultForm: React.FC<Props> = ({ phase, code }) => {
-  const { explanations, careers, recommends, best, worst } = getTestResult('ENFJ' || code);
+  const { explanations, careers, recommends, best, worst } = getTestResult(code);
 
   return (
     <ScTestResultForm>
