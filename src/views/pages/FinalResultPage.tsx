@@ -50,9 +50,12 @@ const FinalResultPage: React.FC = () => {
           loading ? <Loader /> :
           <>
             <div className="result-header">
-              <CharSprite phase="a" code={preResultCode} onClick={() => toggleFocusCode({ phase: 'a', code: preResultCode })}/>
-              <CharSprite phase="b" code={resultCode} onClick={() => toggleFocusCode({ phase: 'b', code: resultCode })} />
-              <h2>최종 결과입니다! {focusCode.code}</h2>
+              <CharSprite className={focusCode.phase === 'a' ? 'focus' : ''} phase="a" code={preResultCode} onClick={() => toggleFocusCode({ phase: 'a', code: preResultCode })}/>
+              <CharSprite className={focusCode.phase === 'b' ? 'focus' : ''} phase="b" code={resultCode} onClick={() => toggleFocusCode({ phase: 'b', code: resultCode })} />
+              <h2>
+                {focusCode.phase === 'a' ? '친한 사람들에게 나는? ' : '회사 사람들에게 나는? '}
+                <span>{focusCode.code}</span>
+              </h2>
             </div>
             <TestResultForm {...focusCode} />
             <BaseButton color="purple" onClick={goBackHome}>처음으로 돌아가기</BaseButton>
@@ -65,15 +68,17 @@ const FinalResultPage: React.FC = () => {
 
 const ScFinalResultPage = styled.div<{focusPhase: 'a' | 'b'}>`
   .result-header { ${s('tac')};
-    h3 {
-      ${s('fs(28);')}
-      span { ${({ theme }) => s(`fs(28); c(${theme.purple[2]})`)} }
+    h2 {
+      ${s('mt(20); fs(24);')}
+      span { ${({ theme }) => s(`fs(28); c(${theme.purple[1]})`)} }
     }
-  }
-  > ${ScCharSprite} {
-    ${({ focusPhase }) => focusPhase === 'a'
-      ? css`&:first-child { transform: scale(1.5); }`
-      : css`&:nth-child(2) { transform: scale(1.5); }`
+    > ${ScCharSprite} {
+      ${s('pointer;')}
+      &.focus {
+        ${s('br(10);')}
+        box-shadow: 0 0 20px #f4d1ff inset, 0 0 30px #da5cff;
+      }
+      &:nth-of-type(1) { margin-right: 20px; }
     }
   }
 `

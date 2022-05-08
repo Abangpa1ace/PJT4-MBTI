@@ -23,11 +23,11 @@ const TestResultForm: React.FC<Props> = ({ phase, code }) => {
       <ul className="match-list">
         <li>
           <CharSprite phase={phase} code={best} />
-          <p>이 사람은 찐친각!</p>
+          <p>이 사람은 <span>찐친각</span>!</p>
         </li>
         <li>
           <CharSprite phase={phase} code={worst} />
-          <p>이 사람은 손절각~</p>
+          <p>이 사람은 <span>손절각</span>~</p>
         </li>
       </ul>
     </ScTestResultForm>
@@ -44,7 +44,10 @@ const ScTestResultForm = styled.div` ${s(`wf;`)}
   }
   .match-list { ${s('flex-center; mt(24);')}
     li { ${s('wf; tac;')}} 
-      p ${s('c(#333);')}
+      p {
+        ${s('c(#333);')}
+        span ${s(`c(${theme.purple[1]});`)}
+      }
     }
   }
 
@@ -52,7 +55,9 @@ const ScTestResultForm = styled.div` ${s(`wf;`)}
     h3.title ${s('m(16,0,12); fs(18);')}
     > p ${s('fs(16,24);')}
     .match-list { ${s('mt(6);')}
-      li > p ${s('fs(20);')}
+      li > p {
+        ${s('fs(20);')}
+      }
     }
   }
 `

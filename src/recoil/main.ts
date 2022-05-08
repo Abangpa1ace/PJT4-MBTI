@@ -42,3 +42,8 @@ export const atomDeviceSize = atom<DeviceSizeType>({
   key: 'deviceSize',
   default: 'm',
 })
+
+export const atomToast = atom<string[]>({
+  key: 'toastList',
+  default: [],
+})

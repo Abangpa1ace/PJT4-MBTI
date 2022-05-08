@@ -7,17 +7,19 @@ type Props = {
   code: TestCodes;
   phase: 'a' | 'b';
   onClick?: () => void;
+  className?: string | null;
 }
 
 type ScProps = {
   x: number;
   y: number;
   phase: 'a' | 'b'
+  className?: string;
 }
 
-const CharSprite: React.FC<Props> = ({ code, phase, onClick }) => {
+const CharSprite: React.FC<Props> = ({ code, phase, onClick, className }) => {
   return (
-    <ScCharSprite {...charOffset[code]} phase={phase} onClick={onClick} />
+    <ScCharSprite {...charOffset[code]} phase={phase} onClick={onClick} className={className} />
   )
 }
 
