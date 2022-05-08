@@ -29,8 +29,8 @@ const App = () => {
 
   return (
     <div id="app">
-      <ToastPortal msgList={toastList}/>
       <Router />
+      <ToastPortal />
     </div>
   )
 }

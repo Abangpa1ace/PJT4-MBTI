@@ -4,7 +4,7 @@ import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import s from '@/styles'
 import { useRecoilValue, useResetRecoilState } from 'recoil';
-import { atomResultB, resultCodeA, resultCodeB } from '@/recoil/main';
+import { atomResultA, atomResultB, resultCodeA, resultCodeB } from '@/recoil/main';
 import Loader from '@/views/components/result/Loader';
 import CharSprite, { ScCharSprite } from '@/views/components/result/CharSprite';
 import TestResultForm from '@/views/components/test/TestResultForm';
@@ -18,6 +18,7 @@ const FinalResultPage: React.FC = () => {
   const { navigate } = useReactRouter()
   const [loading, setLoading] = useState<boolean>(true);
 
+  const resetResultA = useResetRecoilState(atomResultA);
   const resetResultB = useResetRecoilState(atomResultB)
   const preResultCode = useRecoilValue<TestCodes>(resultCodeA)
   const resultCode = useRecoilValue<TestCodes>(resultCodeB)
@@ -39,6 +40,7 @@ const FinalResultPage: React.FC = () => {
   }
 
   const goBackHome = () => {
+    resetResultA();
     resetResultB();
     navigate('/')
   }

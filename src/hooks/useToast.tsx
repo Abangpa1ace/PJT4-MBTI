@@ -1,23 +1,29 @@
 import { atomToast } from '@/recoil/main';
-import ToastPortal from '@/views/layouts/ToastPortal';
-import { Children, useCallback, useState } from 'react';
-import ReactDOM from 'react-dom';
 import { useRecoilState } from 'recoil';
 
 interface useToastReturn {
-  toast: (message: string) => void;
+  toast: (message: string, error?: boolean) => void;
 }
-
-const root = document.getElementById('toast')
 
 const useToast = (): useToastReturn => {
   const [toastList, setToastList] = useRecoilState(atomToast);
   
-  const toast = (msg) => {
-    setToastList([...toastList, msg])
+  const addToast = ({ message = '', error = false }) => {
+    if (!!toastList.find(t => t.message === message)) return;
+    setToastList([...toastList, { message, error, time: +new Date() }])
+  }
+
+  const clearToast = (message: string) => {
+    const list = [...toastList];
+    list.splice(list.findIndex(t => t.message === message), 1)
+    setToastList(list);
+  }
+
+  const toast = (message = '', error = false) => {
+    addToast({ message, error })
     setTimeout(() => {
-      setToastList(toastList.slice(1))
-    }, 1000)
+      clearToast(message);
+    }, 2000)
   }
   return { toast }
 }

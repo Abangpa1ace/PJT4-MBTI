@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import testData from '@/db/testList';
 import { arrShuffle } from '@/utils/common';
 import s, { theme, media } from '@/styles';
 import useReactRouter from '@/hooks/useReactRouter';
-import useRouteState from '@/hooks/useRouteState';
 import TestItemForm from '@/views/components/test/TestItemForm';
 import TestProgressBar from '@/views/components/test/TestProgressBar';
 import { useSetRecoilState } from 'recoil';
@@ -15,31 +14,25 @@ const listB = arrShuffle(testData.phaseB);
 
 const TestPage: React.FC = () => {
   const { query, navigate } = useReactRouter()
-  
-  console.log('created')
-  useEffect(() => {
-    console.log('mounted')
-    if (!query.phase || !['a','b'].includes(query.phase)) navigate('/')
-  }, [])
 
   const isPhaseA = query.phase === 'a'
   const themeKey = isPhaseA ? 'green' : 'yellow'
   
-  const testList = isPhaseA ? listA : listB
+  const testList = useRef(isPhaseA ? [...listA] : [...listB])
   const [index, setIndex] = useState<number>(0)
-  const [test, setTest] = useState<TestItem>(testList[index])
+  const [test, setTest] = useState<TestItem>(testList.current[index])
 
   const setResult = useSetRecoilState(isPhaseA ? atomResultA : atomResultB);
 
-  const clickOption = (type: TestAnswer) => {
-    testList[index].result = type
+  const clickOption = (result: TestAnswer) => {
+    testList.current[index] = { ...testList.current[index], result }
     
-    if (index === testList.length - 1) {
-      setResult(testList)
+    if (index === testList.current.length - 1) {
+      setResult(testList.current)
       navigate(isPhaseA ? '/result/mid' : '/result/final')
     }
     else {
-      setTest(testList[index+1])
+      setTest(testList.current[index+1])
       setIndex(index+1)
     }
   }
@@ -51,7 +44,7 @@ const TestPage: React.FC = () => {
           Question <span className='num'>{String(index+1).padStart(2,'0')}</span> .
         </TestNum>
         <TestItemForm test={test} themeKey={themeKey} clickOption={clickOption} />
-        <TestProgressBar length={testList.length} index={index} themeKey={themeKey} />
+        <TestProgressBar length={testList.current.length} index={index} themeKey={themeKey} />
       </section>
     </ScTestPage>
   )

@@ -43,7 +43,7 @@ export const atomDeviceSize = atom<DeviceSizeType>({
   default: 'm',
 })
 
-export const atomToast = atom<string[]>({
+export const atomToast = atom<{ message: string, error: boolean, time: number }[]>({
   key: 'toastList',
   default: [],
 })

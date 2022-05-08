@@ -3,9 +3,16 @@ import styled from 'styled-components'
 import s, { media } from '@/styles';
 import { RiFileCopyLine, RiKakaoTalkFill, RiFacebookCircleFill, RiTwitterFill } from 'react-icons/ri';
 import { clip } from '@/utils/url';
+import useToast from '@/hooks/useToast';
 
 const LinkButtons = () => {
   const url = encodeURI(window.location.href);
+  const { toast } = useToast();
+
+  const shareLink = () => {
+    clip();
+    toast('링크가 복사되었습니다.');
+  }
 
   const shareKakao = () => {
     window.Kakao.Link.sendDefault({
@@ -42,7 +49,7 @@ const LinkButtons = () => {
   
   return (
     <ScLinkButtons>
-      <button className="clip" onClick={() => clip()}>
+      <button className="clip" onClick={shareLink}>
         <RiFileCopyLine />
       </button>
       <button className="kakao" onClick={shareKakao}>

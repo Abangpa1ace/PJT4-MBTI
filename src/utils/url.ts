@@ -7,5 +7,4 @@ export const clip = (): void => {
 	textarea.select();
 	document.execCommand("copy");
 	document.body.removeChild(textarea);
-	alert('링크가 복사되었습니다.')
 }

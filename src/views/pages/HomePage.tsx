@@ -1,14 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components';
 import s, { theme, media } from '@/styles';
 import BaseButton from '@/views/components/common/BaseButton';
 import useReactRouter from '@/hooks/useReactRouter';
 import LinkButtons from '@/views/components/common/LinkButtons';
-import useToast from '@/hooks/useToast';
 
 const HomePage: React.FC = () => {
   const { navigate } = useReactRouter()
-  const { toast } = useToast();
 
   return (
     <ScHomePage>
