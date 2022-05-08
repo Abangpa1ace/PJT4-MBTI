@@ -17,7 +17,7 @@ export const container = css`
   @media (max-width: 520px) {
     gap: 20px;
     width: 100%;
-    padding: 30px 20px;
+    padding: 60px 20px;
   }
 `;
 
