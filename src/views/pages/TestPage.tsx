@@ -24,7 +24,7 @@ const TestPage: React.FC = () => {
 
   const setResult = useSetRecoilState(isPhaseA ? atomResultA : atomResultB);
 
-  const clickOption = (result: TestAnswer) => {
+  const clickOption = (result: TestAnswer | string) => {
     testList.current[index] = { ...testList.current[index], result }
     
     if (index === testList.current.length - 1) {

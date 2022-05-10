@@ -25,8 +25,6 @@ const App = () => {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
-  const toastList = useRecoilValue(atomToast);
-
   return (
     <div id="app">
       <Router />

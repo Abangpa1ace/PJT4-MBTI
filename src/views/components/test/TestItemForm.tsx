@@ -5,7 +5,7 @@ import s, { slideLeft, theme, media } from '@/styles';
 type Props = {
   test: TestItem;
   themeKey: 'green' | 'yellow';
-  clickOption: (type: TestAnswer) => void;
+  clickOption: (type: TestAnswer | string) => void;
 }
 
 const TestItemForm: React.FC<Props> = ({ test, themeKey, clickOption }) => {
@@ -21,7 +21,7 @@ const TestItemForm: React.FC<Props> = ({ test, themeKey, clickOption }) => {
 
 export const ScTestItemForm = styled.div`${s(`flex-column; gap(20); wf; tal;`)}
   h2 { 
-    ${s('c(#595959);')}
+    ${s('c(#330303);')}
     white-space: pre-wrap; 
   }
 

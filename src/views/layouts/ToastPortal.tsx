@@ -7,12 +7,12 @@ import s from '@/styles'
 
 const ToastPortal: React.FC= () => {
   const toastList = useRecoilValue(atomToast);
-
+  const toastRoot = document.getElementById('root-toast')!;
   return ReactDOM.createPortal(
     <ToastContainer>
       {toastList.map(toast => <li key={toast.time} className={toast.error ? 'error' : ''}>{toast.message}</li>)}
     </ToastContainer>
-    , document.getElementById('root-toast'));
+    , toastRoot);
 };
 const ani = keyframes`
   0%, 100% {

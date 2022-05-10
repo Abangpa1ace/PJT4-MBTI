@@ -2,9 +2,8 @@ type storageValue = string | number | symbol | object;
 
 export const setStorage = (key: string, value: storageValue, isLocal = true): void => {
   if (!value) throw 'None Value'
-  console.log('set', key)
   if (typeof value === 'object') value = JSON.stringify(value);
-  (isLocal ? localStorage : sessionStorage).setItem(key, value)
+  (isLocal ? localStorage : sessionStorage).setItem(key, String(value))
 }
 
 export const getStorage = (key: string, isLocal = true): void => {

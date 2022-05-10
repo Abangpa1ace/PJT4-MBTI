@@ -7,7 +7,7 @@ type Props = {
   code: TestCodes;
   phase: 'a' | 'b';
   onClick?: () => void;
-  className?: string | null;
+  className?: string | undefined;
 }
 
 type ScProps = {

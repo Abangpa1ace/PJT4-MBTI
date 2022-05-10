@@ -11,8 +11,7 @@ type TestCodes =
   'INFJ' | 'INFP' | 'INTJ' | 'INTP' |
   'ISFJ' | 'ISFP' | 'ISTJ' | 'ISTP' |
   'ENFJ' | 'ENFP' | 'ENTJ' | 'ENTP' |
-  'ESFJ' | 'ESFP' | 'ESTJ' | 'ESTP'
-
+  'ESFJ' | 'ESFP' | 'ESTJ' | 'ESTP' 
 interface TestItem {
   category: keyof TestOptions;
   question: string;

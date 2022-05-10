@@ -1,6 +1,4 @@
-export const setMBTI = (list: TestSubmitList): string => {
-  if (!list.length) return '';
-  
+export const setMBTI = (list: TestSubmitList): TestCodes => {
   const obj = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 }
   list.forEach(r => obj[r.result]++)
   
