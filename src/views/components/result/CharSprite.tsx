@@ -25,7 +25,7 @@ const CharSprite: React.FC<Props> = ({ code, phase, onClick, className }) => {
 
 export const ScCharSprite = styled.div<ScProps>`
   ${s('dib; wh(140,150);')}
-  ${({ phase }) => `background-image: url('/src/asset/img/mbti_char_${phase}.jpeg')`};
+  ${({ phase }) => `background-image: url('/asset/img/mbti_char_${phase}.jpeg')`};
   ${({ x, y }) => `background-position: ${x}px ${y}px`};
   background-repeat: no-repeat;
 

@@ -20,7 +20,7 @@ const LinkButtons = () => {
       content: {
         title: '지금 우리 MBTI는?',
         description: '파릇파릇하기만 했던 나, 입사후에 무슨 일이?',
-        imageUrl: window.location.href + '/src/asset/img/basic.jpeg',
+        imageUrl: window.location.href + '/asset/img/basic.jpeg',
         link: {
           webUrl : url,
           mobileWebUrl : url,

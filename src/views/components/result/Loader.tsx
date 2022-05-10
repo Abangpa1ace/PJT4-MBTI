@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Loader = () => {
   return (
     <ScLoader>
-      <img src="/src/asset/img/loading.gif" />
+      <img src="/asset/img/loading.gif" />
       <p>
         Loading
         <span>.</span>
