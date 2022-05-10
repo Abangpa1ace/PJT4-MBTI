@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
         <h2>지금 우리 MBTI는?</h2>
         <div>
           <div className="image-holder">
-            <img src="./src/asset/img/intro.jpeg" alt="intro-difference-img" />
+            <img src="/asset/img/intro.jpeg" alt="intro-difference-img" />
           </div>
           <h3>
             <span className="green">파릇파릇</span> 하기만했던 나, 입사후에 <span className="yellow">무슨 일이?!</span>
